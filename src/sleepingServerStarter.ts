@@ -59,19 +59,20 @@ const main = async () => {
   process.stdin.resume();
   process.stdin.setEncoding("utf8");
 
-  const mainCallBack = (settings: Settings) => {
-    if (!settings.preventStop) {
-      logger.info(`[Main] Waiting for 'quit' in CLI.`);
-      process.stdin.on("data", (text) => {
-        if (text.indexOf("quit") > -1) {
-          sleepingContainer.playerConnectionCallBack("A CliUser");
-        }
-      });
-    }
-  };
+  // const mainCallBack = (settings: Settings) => {
+  //   if (!settings.preventStop) {
+  //     logger.info(`[Main] Waiting for 'quit' in CLI.`);
+  //     process.stdin.on("data", (text) => {
+  //       if (text.indexOf("quit") > -1) {
+  //         sleepingContainer.playerConnectionCallBack("A CliUser");
+  //       }
+  //     });
+  //   }
+  // };
 
   try {
-    sleepingContainer = new SleepingContainer(mainCallBack);
+    // sleepingContainer = new SleepingContainer(mainCallBack);
+    sleepingContainer = new SleepingContainer();
     await sleepingContainer.init(true);
   } catch (error) {
     logger.error("[Main] Something bad happened.", error);

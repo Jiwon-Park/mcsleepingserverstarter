@@ -72,4 +72,36 @@ export class SleepingDiscord {
     };
     await this.sendMessage(content, false);
   };
+
+  onPlayerJoin = async (playerName: string) => {
+    const content = {
+      content: null,
+      embeds: [
+        {
+          title: `👋 ${playerName} joined the server.`,
+          color: 25344,
+        },
+      ],
+      username: "SleepingServerStarter",
+      avatar_url:
+        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
+    };
+    await this.sendMessage(content, false);
+  }
+  
+  onPlayerLeft = async (playerName: string) => {
+    const content = {
+      content: null,
+      embeds: [
+        {
+          title: `👋 ${playerName} left the server.`,
+          color: 25344,
+        },
+      ],
+      username: "SleepingServerStarter",
+      avatar_url:
+        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
+    };
+    await this.sendMessage(content, false);
+  }
 }

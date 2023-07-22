@@ -24,11 +24,29 @@ export class SleepingContainer implements ISleepingServer {
   discord?: SleepingDiscord;
 
   isClosing = false;
+  playerNumber = 0;
 
-  constructor(callBack: (settings: Settings) => void) {
+  // constructor(callBack: (settings: Settings) => void) {
+  //   this.logger = getLogger();
+  //   this.settings = getSettings();
+  //   callBack(this.settings);
+  // }
+
+  constructor() {
     this.logger = getLogger();
     this.settings = getSettings();
-    callBack(this.settings);
+    if (!this.settings.preventStop) {
+      this.logger.info(`[Main] Waiting for 'quit' in CLI.`);
+      process.stdin.on("data", (text) => {
+        if (text.indexOf("quit") > -1) {
+          this.playerConnectionCallBack("A CliUser");
+        }
+        else if (this.mcProcess?.connected) {
+          this.mcProcess.stdin?.write(text + "\n\n");
+          this.mcProcess.send(text + "\n\n");
+        }
+      });
+    }
   }
 
   init = async (isThisTheBeginning = false) => {
@@ -72,13 +90,26 @@ export class SleepingContainer implements ISleepingServer {
     if (this.settings.webPort > 0 && !this.settings.webStopOnStart) {
       const cmdArgs = this.settings.minecraftCommand.split(" ");
       const exec = cmdArgs.splice(0, 1)[0];
+      this.playerNumber = 0;
 
       this.mcProcess = spawn(exec, cmdArgs, {
-        stdio: "inherit",
+        stdio: ['ipc', "pipe", "inherit"],
         cwd: this.settings.minecraftWorkingDirectory ?? process.cwd(),
       });
-      this.mcProcess.stdout?.on("data", (data) => {
-        this.logger.info(`[Minecraft] ${data}`);
+      this.mcProcess.stdout?.on("data", async (data : Buffer) => {
+        let outstr = data.toString('utf-8').trimEnd();
+        console.log(outstr);
+        if (outstr.length > 70 && outstr.endsWith('joined the game')) {
+          let playerName = outstr.slice(61, outstr.length - 16);
+          this.logger.info(`[Minecraft] ${playerName} 님이 접속하셨습니다.`);
+          await this.discord?.onPlayerJoin(playerName);
+        }
+        if (outstr.length > 70 && outstr.endsWith('left the game')) {
+          let playerNmae = outstr.slice(61, outstr.length - 14);
+          this.logger.info(`[Minecraft] ${playerNmae} 님이 떠나셨습니다.`);
+          await this.discord?.onPlayerLeft(playerNmae);
+        }
+        // this.logger.info(`[Minecraft] ${data}`);
       });
       this.mcProcess.on("close", (code) => {
         this.logger.info(
