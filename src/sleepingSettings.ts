@@ -25,6 +25,9 @@ export type Settings = {
   favIconPath?: string;
   minecraftWorkingDirectory?: string;
   discordWebhookUrl?: string;
+  discordBotToken?: string;
+  discordChannelID?: string;
+  discordGuildID?: string;
   blackListedAddress?: string[];
   whiteListedNames?: string[];
   hideIpInLogs?: boolean;

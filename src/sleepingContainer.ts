@@ -77,7 +77,9 @@ export class SleepingContainer implements ISleepingServer {
         stdio: "inherit",
         cwd: this.settings.minecraftWorkingDirectory ?? process.cwd(),
       });
-
+      this.mcProcess.stdout?.on("data", (data) => {
+        this.logger.info(`[Minecraft] ${data}`);
+      });
       this.mcProcess.on("close", (code) => {
         this.logger.info(
           `----------- [v${version}] Minecraft stopped ${code} -----------`
