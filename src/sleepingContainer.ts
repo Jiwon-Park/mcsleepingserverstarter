@@ -9,6 +9,7 @@ import { ISleepingServer } from "./sleepingServerInterface";
 import { getSettings, Settings } from "./sleepingSettings";
 import { PlayerConnectionCallBackType } from "./sleepingTypes";
 import { SleepingWeb } from "./sleepingWeb";
+import { SleepingPlugin } from "./sleepingPlugin";
 
 export const MC_TIMEOUT = 5000;
 
@@ -22,6 +23,7 @@ export class SleepingContainer implements ISleepingServer {
   webServer?: SleepingWeb;
 
   discord?: SleepingDiscord;
+  plugin?: SleepingPlugin;
 
   isClosing = false;
   playerNumber = 0;
@@ -42,8 +44,9 @@ export class SleepingContainer implements ISleepingServer {
           this.playerConnectionCallBack("A CliUser");
         }
         else if (this.mcProcess?.connected) {
-          this.mcProcess.stdin?.write(text + "\n\n");
-          this.mcProcess.send(text + "\n\n");
+          console.log("Sending to minecraft");
+          this.mcProcess.stdin?.write(text.toString('utf-8'));
+          // this.mcProcess.send(text.toString('utf-8'));
         }
       });
     }
@@ -93,28 +96,22 @@ export class SleepingContainer implements ISleepingServer {
       this.playerNumber = 0;
 
       this.mcProcess = spawn(exec, cmdArgs, {
-        stdio: ['ipc', "pipe", "inherit"],
+        stdio: ['pipe', "pipe", "inherit"],
         cwd: this.settings.minecraftWorkingDirectory ?? process.cwd(),
       });
-      this.mcProcess.stdout?.on("data", async (data : Buffer) => {
-        let outstr = data.toString('utf-8').trimEnd();
-        console.log(outstr);
-        if (outstr.length > 70 && outstr.endsWith('joined the game')) {
-          let playerName = outstr.slice(61, outstr.length - 16);
-          this.logger.info(`[Minecraft] ${playerName} 님이 접속하셨습니다.`);
-          await this.discord?.onPlayerJoin(playerName);
-        }
-        if (outstr.length > 70 && outstr.endsWith('left the game')) {
-          let playerNmae = outstr.slice(61, outstr.length - 14);
-          this.logger.info(`[Minecraft] ${playerNmae} 님이 떠나셨습니다.`);
-          await this.discord?.onPlayerLeft(playerNmae);
-        }
-        // this.logger.info(`[Minecraft] ${data}`);
-      });
+      if(this.mcProcess.stdin){
+        process.stdin.pipe(this.mcProcess.stdin);
+        process.stdin.resume();
+      }
+
+      this.plugin = new SleepingPlugin(this.mcProcess, this.discord);
+      
       this.mcProcess.on("close", (code) => {
         this.logger.info(
           `----------- [v${version}] Minecraft stopped ${code} -----------`
         );
+        process.stdin.unpipe();
+        this.plugin = undefined;
         onProcessClosed();
       });
     } else {
