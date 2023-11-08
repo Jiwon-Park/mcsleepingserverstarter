@@ -19,6 +19,7 @@ export class SleepingWeb implements ISleepingServer {
   app: Express;
   server?: http.Server;
   webPath = "";
+  preventStop = false;
 
   constructor(
     settings: Settings,
@@ -28,6 +29,9 @@ export class SleepingWeb implements ISleepingServer {
     this.settings = settings;
     if (this.settings.webSubPath) {
       this.webPath = this.settings.webSubPath;
+    }
+    if (this.settings.preventStop) {
+      this.preventStop = this.settings.preventStop;
     }
     this.playerConnectionCallBack = playerConnectionCallBack;
     this.sleepingContainer = sleepingContainer;
@@ -48,10 +52,10 @@ export class SleepingWeb implements ISleepingServer {
         extname: ".hbs",
         helpers: {
           title: () => {
-            return getMOTD(this.settings, "plain");
+            return getMOTD(this.settings, "plain", true);
           },
           motd: () => {
-            return getMOTD(this.settings, "html");
+            return getMOTD(this.settings, "html", true);
           },
           favIcon: () => {
             return getFavIcon(this.settings);
@@ -126,7 +130,11 @@ export class SleepingWeb implements ISleepingServer {
 
     this.app.get(`${this.webPath}/status`, async (req, res) => {
       const status = await this.sleepingContainer.getStatus();
-      res.json({ status, dynmap: this.settings.webServeDynmap });
+      res.json({
+        status,
+        dynmap: this.settings.webServeDynmap,
+        settings: { preventStop: this.preventStop },
+      });
     });
 
     this.server = this.app.listen(this.settings.webPort, () => {
@@ -155,7 +163,7 @@ export class SleepingWeb implements ISleepingServer {
         this.logger.error(`Dynmap directory at ${dynmapPath} does not exist!`);
       }
     }
-  }
+  };
 
   close = async () => {
     if (this.server) {
@@ -163,5 +171,3 @@ export class SleepingWeb implements ISleepingServer {
     }
   };
 }
-
-

@@ -31,7 +31,7 @@ stops your server after a definied amount of time**
 
 There are multiple ways to run SleepingServerStarter:
 
-### Download the binaries
+### 📦 Download the binaries (easiest)
 
 1. [Download binaries](https://github.com/vincss/mcsleepingserverstarter) corresponding to your OS
 2. Place the executable in the same folder as your server file (`spigot.jar`, `paper.jar`, etc...)
@@ -39,7 +39,7 @@ There are multiple ways to run SleepingServerStarter:
 4. Run the executable
    - On Linux, try `chmod +x mcsleepingserverstarter-linux-x64` if you can't run the executable
 
-### Manually install and compile
+### 📜 Manually install and compile
 
 0. Requires [NodeJS](https://nodejs.org/en/) v16+
 1. Clone the repo or download the project as Zip
@@ -78,6 +78,7 @@ via [Unofficial pterodactyl-installer](https://github.com/vilhelmprytz/pterodact
 | Setting                     | Description                                                                                                                                                                                                                              | Default value                                   |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
 | `serverName`                | The name of your server.<br>You can specify [colour codes](https://motd.gg) by using the `§` prefix (Does not work on Bedrock)                                                                                                           | "SleepingServer, waiting for his prince..."     |
+| `serverMOTD`                | The MOTD to display for Minecraft Servers.<br>You can specify colour codes just as you can for `serverName`. Defaults to `serverName` if not set. (Still does not work on Bedrock)                                                       | Same as `serverName`                            |
 | `serverPort`                | The port of your Java Edition server (0 to disable)                                                                                                                                                                                      | 25565                                           |
 | `bedrockPort`               | The port of your Bedrock Edition server (0 to disable)                                                                                                                                                                                   | 19132                                           |
 | `loginMessage`              | Message shown when the server is off and someone is trying to connect                                                                                                                                                                    | "...Waking server up, come back in a minute..." |
@@ -98,6 +99,7 @@ via [Unofficial pterodactyl-installer](https://github.com/vilhelmprytz/pterodact
 | `blackListedAddress`        | Prevent connections from thoses addresses to wake up the server                                                                                                                                                                          | ["127.0.0.1"]                                   |
 | `whiteListedNames`          | Only allow people with their name on the white list to wake the server up                                                                                                                                                                | ["vincss"]                                      |
 | `hideIpInLogs`              | Hide the ip from the remote player in the logs                                                                                                                                                                                           | false                                           |
+| `hideOnConnectionLogs`      | Hide 'A Prince has taken a quick peek' the logs                                                                                                                                                                                          | false                                           |
 
 > Note: if you need to shutdown the program, simply input a `ctrl + c`, the program will shut down normally afterwards
 
@@ -149,7 +151,14 @@ Give a ⭐️ if you like the project!
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/vincss)
 
 ## 📜 ChangeLog
-
+- 1.7.1 - 1.20.1 :
+  - Run mcsleeperstarter as a non-root user within the docker container
+- 1.7.0 - 1.20.1 :
+  - [Feature] Added serverMOTD setting ( thanks to gavinhsmith )
+  - [UX] Made the Sleep button disappear while server is online when "preventStop" is true ( thanks to gavinhsmith )
+- 1.6.0 - 1.20.1 :
+  - add hideOnConnectionLogs parameter
+  - update minecraft-protocol: 1.43.2 ( minecraft 1.20.1 )
 - 1.5.13 - 1.20.1 :
   - add environement variable DISABLE_FILE_LOGS to disable file logs
 - 1.5.12 - 1.20.1 :

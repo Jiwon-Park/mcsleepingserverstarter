@@ -1,13 +1,13 @@
 {
   "name": "mcsleepingserverstarter",
-  "version": "1.5.12",
+  "version": "1.7.1",
   "description": "Sleeps until someone connects",
   "main": "build/sleepingServerStarter.js",
   "bin": "build/sleepingServerStarter.js",
   "scripts": {
     "start": "run-s prebuild build:typescript run",
     "run": "node .",
-    "dev": "cross-env disableFileLogs=true ts-node ./src/sleepingServerStarter.ts",
+    "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
     "prebuild": "rimraf ./build/ ./bin/ && cpx-fixed \"views/**/*.*\" build/views",
     "build": "run-s build:typescript build:bin",
     "build:typescript": "tsc",
@@ -17,13 +17,13 @@
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
-    "@jsprismarine/prismarine": "^0.1.0-rc.49",
-    "@jsprismarine/raknet": "^0.1.0-rc.49",
+    "@jsprismarine/prismarine": "0.1.0-rc.49",
+    "@jsprismarine/raknet": "0.1.0-rc.49",
     "@sfirew/minecraft-motd-parser": "^1.1.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.4",
     "js-yaml": "^4.1.0",
-    "minecraft-protocol": "^1.43.0",
+    "minecraft-protocol": "^1.44.0",
     "prismarine-chat": "^1.8.0",
     "winston": "^3.8.2"
   },
@@ -40,7 +40,6 @@
     "cpx-fixed": "^1.6.0",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
-    "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "pkg": "^5.8.1",
     "prettier": "^2.8.8",

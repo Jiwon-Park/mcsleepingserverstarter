@@ -8,6 +8,7 @@ const SettingFilePath = "sleepingSettings.yml";
 
 export type Settings = {
   serverName: string;
+  serverMOTD?: string;
   serverPort: number;
   bedrockPort?: number;
   maxPlayers: number;
@@ -31,6 +32,7 @@ export type Settings = {
   blackListedAddress?: string[];
   whiteListedNames?: string[];
   hideIpInLogs?: boolean;
+  hideOnConnectionLogs?: boolean;
 };
 
 export const DefaultSettings: Settings = {
