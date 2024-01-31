@@ -1,24 +1,27 @@
 import { Client, createServer, Server } from "minecraft-protocol";
-import { getFavIcon, getMOTD, ServerStatus } from "./sleepingHelper";
+import { getFavIcon, getMOTD, isAccessAllowed, ServerStatus } from "./sleepingHelper";
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { ISleepingServer } from "./sleepingServerInterface";
-import { Settings } from "./sleepingSettings";
-import { PlayerConnectionCallBackType } from "./sleepingTypes";
+import { AccessFileSettings, Settings } from "./sleepingSettings";
+import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 
 export class SleepingMcJava implements ISleepingServer {
   server?: Server;
 
   settings: Settings;
+  accessSettings: AccessFileSettings;
   logger: LoggerType;
   playerConnectionCallBack: PlayerConnectionCallBackType;
 
   isClosing = false;
 
   constructor(
-    settings: Settings,
-    playerConnectionCallBack: PlayerConnectionCallBackType
+      playerConnectionCallBack: PlayerConnectionCallBackType,
+      settings: Settings,
+      accessSettings: AccessFileSettings
   ) {
     this.settings = settings;
+    this.accessSettings = accessSettings;
     this.playerConnectionCallBack = playerConnectionCallBack;
     this.logger = getLogger();
   }
@@ -64,24 +67,12 @@ export class SleepingMcJava implements ISleepingServer {
 
     this.server.on("login", (client) => {
       const userName = client.username;
+      const player = Player.fromClient(client);
 
-      if (
-        this.settings.blackListedAddress?.some((address) =>
-          client.socket.remoteAddress?.includes(address)
-        )
-      ) {
+      const accessStatus = isAccessAllowed(player, this.settings, this.accessSettings);
+      if (!accessStatus.allowed) {
         this.logger.info(
-          `${userName}.${client.state}:[${client.socket.remoteAddress}], rejected: blacklisted.`
-        );
-        client.end("Connection rejected : blacklisted.");
-        return;
-      }
-      if (
-        this.settings.whiteListedNames &&
-        !this.settings.whiteListedNames.includes(userName)
-      ) {
-        this.logger.info(
-          `${userName}.${client.state}:[${client.socket.remoteAddress}], rejected: not on the guest list.`
+          `${player}.${client.state}:[${client.socket.remoteAddress}], rejected: ${accessStatus.reason}.`
         );
         client.end("You are not on the guest list.");
         return;
@@ -106,8 +97,8 @@ export class SleepingMcJava implements ISleepingServer {
       );
 
       client.on("end", (client) => {
-        this.logger.info(`[${userName}] The prince is gone, for now`, client);
-        this.playerConnectionCallBack(userName);
+        this.logger.info(`[${player}] The prince is gone, for now`, client);
+        this.playerConnectionCallBack(player);
       });
       this.logger.info(`Sending best regards ${this.settings.loginMessage}`);
       client.end(this.settings.loginMessage);

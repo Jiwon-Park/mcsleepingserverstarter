@@ -1,6 +1,7 @@
-import { MC_TIMEOUT, SleepingContainer } from "./sleepingContainer";
+import { SleepingContainer } from "./sleepingContainer";
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { Settings } from "./sleepingSettings";
+import { Player } from "./sleepingTypes";
 
 const logger: LoggerType = getLogger();
 
@@ -41,13 +42,13 @@ process.on("uncaughtException", (err: Error) => {
   }
 
   logger.info(
-    `[Main] ... Restarting the server in (${MC_TIMEOUT / 1000} secs)...`
+    `[Main] ... Restarting the server in (${sleepingContainer.getSettings().restartDelay / 1000} secs)...`
   );
   setTimeout(async () => {
     await sleepingContainer.close(true);
     sleepingContainer.reloadSettings();
     sleepingContainer.init(true);
-  }, MC_TIMEOUT);
+  }, sleepingContainer.getSettings().restartDelay);
 });
 
 const close = async () => {
@@ -59,16 +60,16 @@ const main = async () => {
   process.stdin.resume();
   process.stdin.setEncoding("utf8");
 
-  // const mainCallBack = (settings: Settings) => {
-  //   if (!settings.preventStop) {
-  //     logger.info(`[Main] Waiting for 'quit' in CLI.`);
-  //     process.stdin.on("data", (text) => {
-  //       if (text.indexOf("quit") > -1) {
-  //         sleepingContainer.playerConnectionCallBack("A CliUser");
-  //       }
-  //     });
-  //   }
-  // };
+  const mainCallBack = (settings: Settings) => {
+    if (!settings.preventStop) {
+      logger.info(`[Main] Waiting for 'quit' in CLI.`);
+      process.stdin.on("data", (text) => {
+        if (text.indexOf("quit") > -1) {
+          sleepingContainer.playerConnectionCallBack(Player.cli());
+        }
+      });
+    }
+  };
 
   try {
     // sleepingContainer = new SleepingContainer(mainCallBack);

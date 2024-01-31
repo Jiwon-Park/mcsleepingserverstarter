@@ -4,11 +4,11 @@ import { engine } from "express-handlebars";
 import * as http from "http";
 import path from "path";
 import { SleepingContainer } from "./sleepingContainer";
-import { getFavIcon, getMOTD, ServerStatus } from "./sleepingHelper";
+import { getFavIcon, getMOTD, getMinecraftDirectory, ServerStatus } from "./sleepingHelper";
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { ISleepingServer } from "./sleepingServerInterface";
 import { Settings } from "./sleepingSettings";
-import { PlayerConnectionCallBackType } from "./sleepingTypes";
+import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
 
 export class SleepingWeb implements ISleepingServer {
@@ -19,7 +19,6 @@ export class SleepingWeb implements ISleepingServer {
   app: Express;
   server?: http.Server;
   webPath = "";
-  preventStop = false;
 
   constructor(
     settings: Settings,
@@ -30,11 +29,9 @@ export class SleepingWeb implements ISleepingServer {
     if (this.settings.webSubPath) {
       this.webPath = this.settings.webSubPath;
     }
-    if (this.settings.preventStop) {
-      this.preventStop = this.settings.preventStop;
-    }
     this.playerConnectionCallBack = playerConnectionCallBack;
     this.sleepingContainer = sleepingContainer;
+
     this.logger = getLogger();
     this.app = express();
   }
@@ -98,7 +95,7 @@ export class SleepingWeb implements ISleepingServer {
                 req.socket
               )} Wake up server was ${currentStatus}`
             );
-            this.playerConnectionCallBack("A WebUser");
+            this.playerConnectionCallBack(Player.web());
           }
           break;
         case ServerStatus.Running:
@@ -128,12 +125,27 @@ export class SleepingWeb implements ISleepingServer {
       }
     });
 
+    this.app.post(`${this.webPath}/restart`, async (req, res) => {
+      res.send("received");
+
+      this.logger.info(
+        `[WebServer]${this.getIp(
+          req.socket
+        )} Restart server`
+      );
+
+      this.sleepingContainer.killMinecraft(true);
+    })
+
     this.app.get(`${this.webPath}/status`, async (req, res) => {
       const status = await this.sleepingContainer.getStatus();
       res.json({
         status,
         dynmap: this.settings.webServeDynmap,
-        settings: { preventStop: this.preventStop },
+        settings: {
+          preventStop: this.settings.preventStop ?? false,
+          webAllowRestart: this.settings.webAllowRestart,
+        },
       });
     });
 
@@ -153,8 +165,7 @@ export class SleepingWeb implements ISleepingServer {
           return;
         }
       } else {
-        const mcPath = this.settings.minecraftWorkingDirectory ?? process.cwd();
-        dynmapPath = path.join(mcPath, "plugins/dynmap/web");
+        dynmapPath = path.join(getMinecraftDirectory(this.settings), "plugins/dynmap/web");
       }
       this.logger.info(`[WebServer] Serving dynmap: ${dynmapPath}`);
       if (existsSync(dynmapPath)) {
