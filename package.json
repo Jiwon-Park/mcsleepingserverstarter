@@ -6,7 +6,7 @@
   "bin": "build/sleepingServerStarter.js",
   "scripts": {
     "start": "run-s prebuild build:typescript run",
-    "run:aws": "forever start --minUptime 1000 --spinSleepTime 1000 -c -a \"yarn run start\" ./",
+    "run:aws": "forever start --minUptime 1000 --spinSleepTime 1000 -a -c \"yarn run start\" ./",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
     "prebuild": "rimraf ./build/ ./bin/ && cpx-fixed \"views/**/*.*\" build/views",
