@@ -5,7 +5,7 @@
     startClick = () => {
         console.log('WakeUp');
         $.post('./wakeup', {})
-            .done((sucess) => { console.log('WakeUp Sucess', sucess); $('#server-status').text(`🟥 Starting 🟥`); $('#wakeup-button').text('...Waiting...'); })
+            .done((sucess) => { console.log('WakeUp Sucess', sucess); $('#server-status').text(`🟧 시작 중 🟧`); $('#wakeup-button').text('...5~7분 소요됩니다...'); })
             .fail((error) => { console.log('WakeUp Error', error); })
     };
 
@@ -18,18 +18,18 @@
 
     getTexts = (status) => {
         let emoji = '🟥'
-        let buttonText = 'Wake Up';
+        let buttonText = '서버 켜기';
         switch (status) {
             case 'Running':
                 emoji = '🟩'
-                buttonText = 'Sleep'
+                buttonText = '서버 끄기'
                 break;
             case 'Sleeping':
                 emoji = '💤'
                 break;
             case 'Starting':
                 emoji = '🟧'
-                buttonText = '...Waiting...'
+                buttonText = '...5~7분 소요됩니다...'
                 break;
         }
         return { emoji, buttonText };
@@ -58,7 +58,7 @@
                 })
             .fail(
                 (error) => {
-                    $('#server-status').text('🛑 Offline 🛑');
+                    $('#server-status').text('🛑 서버 꺼짐 🛑');
                 })
     };
 
@@ -89,7 +89,7 @@
     <div class="homeCenter">
         <div>
             <div>{{{ motd }}}</div>
-            <div id="server-status" style="text-align: center;">🛑 Offline 🛑</div>
+            <div id="server-status" style="text-align: center;">🛑 서버 꺼짐 🛑</div>
         </div>
     </div>
     <div class="buttonContainer">
