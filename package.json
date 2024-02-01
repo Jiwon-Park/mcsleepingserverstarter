@@ -5,7 +5,8 @@
   "main": "build/sleepingServerStarter.js",
   "bin": "build/sleepingServerStarter.js",
   "scripts": {
-    "start": "run-s prebuild build:typescript run:aws",
+    "start": "run-s prebuild build:typescript run",
+    "start:aws": "run-s prebuild build:typescript run:aws",
     "run:aws": "forever start --minUptime 1000 --spinSleepTime 1000 -a -c \"yarn run run\" ./",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
