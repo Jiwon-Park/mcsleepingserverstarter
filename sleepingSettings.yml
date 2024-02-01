@@ -16,7 +16,7 @@ maxPlayers: 20
 # webAllowRestart: true
 
 startMinecraft: true # false to disable
-minecraftCommand: "java -jar paper.jar nogui" # or paper.jar or whatever flavor you like
+minecraftCommand: "/opt/bitnami/projects/mining-camp/start.sh" # or paper.jar or whatever flavor you like
 # minecraftAutostart: true
 # restartDelay: 200
 
@@ -25,7 +25,7 @@ minecraftCommand: "java -jar paper.jar nogui" # or paper.jar or whatever flavor 
 # discordWebhookUrl: "https://discord.com/api/webhooks/REPLACE_ME"
 
 # blackListedAddress: ["149.102.143.151", "132.145.71.44", "45.128.232.206", "193.35.18."]
-# whiteListedNames: ["vincss"]
+# whiteListedNames: ["Seni28"]
 # useWhitelistFile: true
 # useBlacklistFiles: true
 

@@ -1,5 +1,6 @@
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { Settings } from "./sleepingSettings";
+import { Player } from "./sleepingTypes";
 
 type DiscordContent = {
   content: null;
@@ -41,12 +42,12 @@ export class SleepingDiscord {
     }
   };
 
-  onPlayerLogging = async (playerName: string) => {
+  onPlayerLogging = async (player: Player) => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `⏰ ${playerName} woke up the server !`,
+          title: `⏰ ${player} woke up the server !`,
           color: 25344,
         },
       ],
@@ -73,12 +74,12 @@ export class SleepingDiscord {
     await this.sendMessage(content, false);
   };
 
-  onPlayerJoin = async (playerName: string) => {
+  onPlayerJoin = async (player: Player) => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `👋 ${playerName} joined the server.`,
+          title: `👋 ${player} joined the server.`,
           color: 25344,
         },
       ],
@@ -89,12 +90,12 @@ export class SleepingDiscord {
     await this.sendMessage(content, false);
   }
   
-  onPlayerLeft = async (playerName: string) => {
+  onPlayerLeft = async (player: Player) => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `👋 ${playerName} left the server.`,
+          title: `👋 ${player} left the server.`,
           color: 25344,
         },
       ],

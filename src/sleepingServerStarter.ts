@@ -1,12 +1,11 @@
-import { SleepingContainer } from "./sleepingContainer";
+import { SleepingDiscord } from "./sleepingDiscord";
 import { getLogger, LoggerType } from "./sleepingLogger";
-import { Settings } from "./sleepingSettings";
-import { Player } from "./sleepingTypes";
+import { getSettings, Settings } from "./sleepingSettings";
+import { SleepingWeb } from "./sleepingWeb";
 
 const logger: LoggerType = getLogger();
-
-let sleepingContainer: SleepingContainer;
-
+const settings = getSettings()
+const discord = new SleepingDiscord(settings);
 process.on("SIGINT", async () => {
   logger.info("[Main] SIGINT signal received.");
   await close();
@@ -40,44 +39,10 @@ process.on("uncaughtException", (err: Error) => {
   ) {
     logger.error("[Main] Something bad happened", err.message);
   }
-
-  logger.info(
-    `[Main] ... Restarting the server in (${sleepingContainer.getSettings().restartDelay / 1000} secs)...`
-  );
-  setTimeout(async () => {
-    await sleepingContainer.close(true);
-    sleepingContainer.reloadSettings();
-    sleepingContainer.init(true);
-  }, sleepingContainer.getSettings().restartDelay);
 });
 
-const close = async () => {
-  await sleepingContainer.close(true);
-  logger.info("[Main] ... To be continued ... ");
-};
-
 const main = async () => {
-  process.stdin.resume();
-  process.stdin.setEncoding("utf8");
-
-  const mainCallBack = (settings: Settings) => {
-    if (!settings.preventStop) {
-      logger.info(`[Main] Waiting for 'quit' in CLI.`);
-      process.stdin.on("data", (text) => {
-        if (text.indexOf("quit") > -1) {
-          sleepingContainer.playerConnectionCallBack(Player.cli());
-        }
-      });
-    }
-  };
-
-  try {
-    // sleepingContainer = new SleepingContainer(mainCallBack);
-    sleepingContainer = new SleepingContainer();
-    await sleepingContainer.init(true);
-  } catch (error) {
-    logger.error("[Main] Something bad happened.", error);
-  }
+  new SleepingWeb(settings, discord.onPlayerJoin)
 };
 
 main();

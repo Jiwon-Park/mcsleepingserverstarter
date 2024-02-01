@@ -3,34 +3,33 @@ import { existsSync } from "fs";
 import { engine } from "express-handlebars";
 import * as http from "http";
 import path from "path";
-import { SleepingContainer } from "./sleepingContainer";
+import { SleepingDiscord } from "./sleepingDiscord";
 import { getFavIcon, getMOTD, getMinecraftDirectory, ServerStatus } from "./sleepingHelper";
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { ISleepingServer } from "./sleepingServerInterface";
 import { Settings } from "./sleepingSettings";
 import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
+import { NewPingResult, ping } from "minecraft-protocol";
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
-  sleepingContainer: SleepingContainer;
   playerConnectionCallBack: PlayerConnectionCallBackType;
   logger: LoggerType;
   app: Express;
   server?: http.Server;
   webPath = "";
+  waking = false
 
   constructor(
     settings: Settings,
     playerConnectionCallBack: PlayerConnectionCallBackType,
-    sleepingContainer: SleepingContainer
   ) {
     this.settings = settings;
     if (this.settings.webSubPath) {
       this.webPath = this.settings.webSubPath;
     }
     this.playerConnectionCallBack = playerConnectionCallBack;
-    this.sleepingContainer = sleepingContainer;
 
     this.logger = getLogger();
     this.app = express();
@@ -86,8 +85,17 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/wakeup`, async (req, res) => {
       res.send("received");
 
-      const currentStatus = await this.sleepingContainer.getStatus();
-      switch (currentStatus) {
+      const currentStatus = await this.getStatus();
+      let resolvedStatus = "";
+
+      if (currentStatus == -1) {
+        if (this.waking) resolvedStatus = ServerStatus.Starting
+        else resolvedStatus = ServerStatus.Sleeping
+      }
+
+
+
+      switch (resolvedStatus) {
         case ServerStatus.Sleeping:
           {
             this.logger.info(
@@ -134,11 +142,11 @@ export class SleepingWeb implements ISleepingServer {
         )} Restart server`
       );
 
-      this.sleepingContainer.killMinecraft(true);
+      this.killMinecraft(true);
     })
 
     this.app.get(`${this.webPath}/status`, async (req, res) => {
-      const status = await this.sleepingContainer.getStatus();
+      const status = await this.getStatus();
       res.json({
         status,
         dynmap: this.settings.webServeDynmap,
@@ -175,6 +183,19 @@ export class SleepingWeb implements ISleepingServer {
       }
     }
   };
+
+  getStatus = async () => {
+    
+    let pingres = await ping({host:"craft.seni.kr", port:25565, version: "1.19.4"}).catch((e) => {return -1})
+    if (typeof pingres == "number") {
+      return pingres
+    }
+    if ("playerCount" in pingres) {
+      return pingres.playerCount
+    } else if ("players" in pingres) {
+      return pingres.players.online;
+    }
+  }
 
   close = async () => {
     if (this.server) {
