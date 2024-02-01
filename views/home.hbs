@@ -1,11 +1,11 @@
 <script>
-    const REFRESH_INTERVAL = 2000;
+    const REFRESH_INTERVAL = 10000;
     let dynmapLink = './dynmap';
 
     startClick = () => {
         console.log('WakeUp');
         $.post('./wakeup', {})
-            .done((sucess) => { console.log('WakeUp Sucess', sucess); })
+            .done((sucess) => { console.log('WakeUp Sucess', sucess); $('#server-status').text(`🟥 Starting 🟥`); $('#wakeup-button').text('...Waiting...'); })
             .fail((error) => { console.log('WakeUp Error', error); })
     };
 

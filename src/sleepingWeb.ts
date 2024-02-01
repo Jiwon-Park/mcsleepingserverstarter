@@ -60,7 +60,7 @@ export class SleepingWeb implements ISleepingServer {
         clearTimeout(this.noOneKillEvent);
         this.noOneKillEvent = undefined
       }
-    }, 3000)
+    }, 10000)
   }
   
 
