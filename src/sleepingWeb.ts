@@ -11,6 +11,7 @@ import { Settings } from "./sleepingSettings";
 import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
 import { NewPingResult, ping } from "minecraft-protocol";
+import { exec } from "child_process";
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
@@ -20,19 +21,46 @@ export class SleepingWeb implements ISleepingServer {
   server?: http.Server;
   webPath = "";
   waking = false
+  noOneKillEvent?: NodeJS.Timeout = undefined
 
   constructor(
-    settings: Settings,
-    playerConnectionCallBack: PlayerConnectionCallBackType,
+    settings: Settings
   ) {
     this.settings = settings;
     if (this.settings.webSubPath) {
       this.webPath = this.settings.webSubPath;
     }
-    this.playerConnectionCallBack = playerConnectionCallBack;
+    this.playerConnectionCallBack = this.startMinecraft;
 
     this.logger = getLogger();
     this.app = express();
+    setTimeout(this.pingEvent , 30000);
+  }
+
+  pingEvent = async () => {
+    let currentStatus = await this.getStatus();
+    if ( this.waking && (currentStatus == undefined || currentStatus >= 0 ) )this.waking = false
+
+    if ( this.noOneKillEvent == undefined && ( currentStatus == 0 || currentStatus == undefined )) {
+
+      this.logger.info(`[WebServer] No one is on the server, starting the 10 minute timer.`)
+      this.noOneKillEvent = setTimeout(async () => {
+        let currentStatus = await this.getStatus();
+        if (currentStatus == 0 || currentStatus == undefined) {
+          this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
+          this.killMinecraft(false);
+        }
+        this.noOneKillEvent = undefined
+      }, 600000);
+
+    }
+
+    else if (this.noOneKillEvent && currentStatus != undefined && currentStatus > 0) {
+      this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
+      clearTimeout(this.noOneKillEvent);
+      this.noOneKillEvent = undefined
+    }
+    setTimeout(this.pingEvent, 30000);
   }
 
   getIp = (socket: Socket) => {
@@ -85,17 +113,10 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/wakeup`, async (req, res) => {
       res.send("received");
 
-      const currentStatus = await this.getStatus();
-      let resolvedStatus = "";
-
-      if (currentStatus == -1) {
-        if (this.waking) resolvedStatus = ServerStatus.Starting
-        else resolvedStatus = ServerStatus.Sleeping
-      }
+      const currentStatus = this.resolveStatus(await this.getStatus());
 
 
-
-      switch (resolvedStatus) {
+      switch (currentStatus) {
         case ServerStatus.Sleeping:
           {
             this.logger.info(
@@ -104,6 +125,7 @@ export class SleepingWeb implements ISleepingServer {
               )} Wake up server was ${currentStatus}`
             );
             this.playerConnectionCallBack(Player.web());
+            this.waking = true
           }
           break;
         case ServerStatus.Running:
@@ -113,7 +135,7 @@ export class SleepingWeb implements ISleepingServer {
                 req.socket
               )} Stopping server was ${currentStatus}`
             );
-            this.sleepingContainer.killMinecraft();
+            this.killMinecraft(false);
           }
           break;
         case ServerStatus.Starting:
@@ -146,7 +168,7 @@ export class SleepingWeb implements ISleepingServer {
     })
 
     this.app.get(`${this.webPath}/status`, async (req, res) => {
-      const status = await this.getStatus();
+      const status = this.resolveStatus(await this.getStatus());
       res.json({
         status,
         dynmap: this.settings.webServeDynmap,
@@ -194,7 +216,73 @@ export class SleepingWeb implements ISleepingServer {
       return pingres.playerCount
     } else if ("players" in pingres) {
       return pingres.players.online;
+    } else {
+      return -1;
     }
+  }
+
+  resolveStatus = (status: number) => {
+    let resolvedStatus = "";
+
+    if (status == -1) {
+      if (this.waking) resolvedStatus = ServerStatus.Starting
+      else resolvedStatus = ServerStatus.Sleeping
+    }
+    else {
+      resolvedStatus = ServerStatus.Running
+    }
+    return resolvedStatus
+  }
+
+  startMinecraft = async (player: Player) => {
+    this.logger.info(`[WebServer] Starting Minecraft Server`);
+    if (this.settings.minecraftCommand) {
+      let proc = exec(this.settings.minecraftCommand, (error, stdout, stderr) => {
+        if (error) {
+          this.logger.error(`[WebServer] Error starting server: ${error}`);
+          return;
+        }
+        if (stderr) {
+          this.logger.error(`[WebServer] Error starting server: ${stderr}`);
+          return;
+        }
+        this.logger.info(`[WebServer] Started server: ${stdout}`);
+      });
+    }
+    else {
+      this.logger.error(
+        `[WebServer] No start command defined, cannot start the server`
+      );
+    }
+  }
+
+  killMinecraft = async (restart: boolean) => {
+    this.logger.info(
+      `[WebServer] Killing Minecraft Server, restart: ${restart}`
+    );
+    if (this.settings.stopCommand) {
+      let proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
+        if (error) {
+          this.logger.error(`[WebServer] Error stopping server: ${error}`);
+          return;
+        }
+        if (stderr) {
+          this.logger.error(`[WebServer] Error stopping server: ${stderr}`);
+          return;
+        }
+        this.logger.info(`[WebServer] Stopped server: ${stdout}`);
+      });
+      
+      if (restart) {
+        proc.on('exit', () => { this.playerConnectionCallBack(Player.web()) });
+      }
+    }
+    else {
+      this.logger.error(
+        `[WebServer] No stop command defined, cannot stop the server`
+      );
+    }
+    
   }
 
   close = async () => {

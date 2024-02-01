@@ -1,7 +1,7 @@
 import { writeFileSync, readFileSync } from "fs";
 import { dump, load } from "js-yaml";
 import { getLogger } from "./sleepingLogger";
-import { getMinecraftDirectory, loadFile } from "./sleepingHelper";
+// import { getMinecraftDirectory, loadFile } from "./sleepingHelper";
 import path from "path";
 
 import PropertiesReader = require('properties-reader');
@@ -30,6 +30,7 @@ export type Settings = {
   startMinecraft: boolean;
   minecraftAutostart?: boolean;
   minecraftCommand: string;
+  stopCommand?: string;
   minecraftWorkingDirectory?: string;
   restartDelay: number;
   preventStop?: boolean;
@@ -111,13 +112,13 @@ export function getSettings(): Settings {
     const read = readFileSync(SettingFilePath).toString();
     const settingsFromFiles = load(read) as Settings;
     settings = { ...DefaultSettings, ...settingsFromFiles };
-    if (settings.useNativeFiles) {
-      try {
-        applyNativeProperties(settings);
-      } catch (error: any) {
-        logger.error(`useNativeFiles is specified, but wasn't able to read ${NativePropertiesFilePath}.`, error)
-      }
-    }
+    // if (settings.useNativeFiles) {
+    //   try {
+    //     applyNativeProperties(settings);
+    //   } catch (error: any) {
+    //     logger.error(`useNativeFiles is specified, but wasn't able to read ${NativePropertiesFilePath}.`, error)
+    //   }
+    // }
   } catch (error: any) {
     logger.error("Failed to load setting, using default.", error);
 
@@ -145,46 +146,46 @@ export function getSettings(): Settings {
   return settings;
 }
 
-export function getAccessSettings(settings: Settings): AccessFileSettings {
-  return {
-    whitelistEntries: getWhitelistEntries(settings),
-    bannedIpEntries: getBannerIpEntries(settings),
-    bannedPlayerEntries: getBannerPlayerEntries(settings)
-  }
-}
+// export function getAccessSettings(settings: Settings): AccessFileSettings {
+//   return {
+//     whitelistEntries: getWhitelistEntries(settings),
+//     bannedIpEntries: getBannerIpEntries(settings),
+//     bannedPlayerEntries: getBannerPlayerEntries(settings)
+//   }
+// }
 
-export function getWhitelistEntries(settings: Settings): WhitelistEntry[] | undefined {
-  return loadFile(WhitelistFilePath, "whitelist entries", settings)
-}
+// export function getWhitelistEntries(settings: Settings): WhitelistEntry[] | undefined {
+//   return loadFile(WhitelistFilePath, "whitelist entries", settings)
+// }
 
-export function getBannerIpEntries(settings: Settings): BannedIpEntry[] | undefined {
-  return loadFile(BannedIpsFilePath, "banned ips", settings)
-}
+// export function getBannerIpEntries(settings: Settings): BannedIpEntry[] | undefined {
+//   return loadFile(BannedIpsFilePath, "banned ips", settings)
+// }
 
-export function getBannerPlayerEntries(settings: Settings): BannedPlayerEntry[] | undefined {
-  return loadFile(BannedPlayersFilePath, "banned players", settings)
-}
+// export function getBannerPlayerEntries(settings: Settings): BannedPlayerEntry[] | undefined {
+//   return loadFile(BannedPlayersFilePath, "banned players", settings)
+// }
 
-export function applyNativeProperties(settings: Settings) {
-  const properties = PropertiesReader(path.join(getMinecraftDirectory(settings), NativePropertiesFilePath));
+// export function applyNativeProperties(settings: Settings) {
+//   const properties = PropertiesReader(path.join(getMinecraftDirectory(settings), NativePropertiesFilePath));
 
-  logger.info(`Loaded server.properties: ${JSON.stringify(properties)}`)
+//   logger.info(`Loaded server.properties: ${JSON.stringify(properties)}`)
 
-  const portProperty = properties.get("query.port");
-  const maxPlayersProperty = properties.get("max-players");
-  const serverOnlineModeProperty = properties.get("online-mode");
-  const useWhitelistFileProperty = properties.get("white-list");
-  if (portProperty) {
-    settings.serverPort = portProperty.valueOf() as number;
-  }
-  if (maxPlayersProperty) {
-    settings.maxPlayers = maxPlayersProperty.valueOf() as number;
-  }
-  if (serverOnlineModeProperty) {
-    settings.serverOnlineMode = serverOnlineModeProperty.valueOf() as boolean;
-  }
-  if (useWhitelistFileProperty) {
-    settings.useWhitelistFile = useWhitelistFileProperty.valueOf() as boolean;
-  }
-  settings.useBlacklistFiles = true;
-}
+//   const portProperty = properties.get("query.port");
+//   const maxPlayersProperty = properties.get("max-players");
+//   const serverOnlineModeProperty = properties.get("online-mode");
+//   const useWhitelistFileProperty = properties.get("white-list");
+//   if (portProperty) {
+//     settings.serverPort = portProperty.valueOf() as number;
+//   }
+//   if (maxPlayersProperty) {
+//     settings.maxPlayers = maxPlayersProperty.valueOf() as number;
+//   }
+//   if (serverOnlineModeProperty) {
+//     settings.serverOnlineMode = serverOnlineModeProperty.valueOf() as boolean;
+//   }
+//   if (useWhitelistFileProperty) {
+//     settings.useWhitelistFile = useWhitelistFileProperty.valueOf() as boolean;
+//   }
+//   settings.useBlacklistFiles = true;
+// }

@@ -1,7 +1,7 @@
 import fs, { readFileSync } from "fs";
 import path from "path";
 import { createConnection } from "net";
-import { autoToHtml, cleanTags } from "@sfirew/minecraft-motd-parser";
+import { autoToHTML, cleanTags } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
 import { LATEST_MINECRAFT_VERSION } from "./version";
 import { getLogger } from "./sleepingLogger";
@@ -69,7 +69,7 @@ export const getMOTD = (
 
   if (outputType === "html") {
     // This automatically escapes any tags in the serverName to prevent XSS
-    return autoToHtml(motd);
+    return autoToHTML(motd);
   }
 
   return ChatMessage(settings.version || LATEST_MINECRAFT_VERSION)

@@ -40,9 +40,13 @@ process.on("uncaughtException", (err: Error) => {
     logger.error("[Main] Something bad happened", err.message);
   }
 });
-
+let web: SleepingWeb;
 const main = async () => {
-  new SleepingWeb(settings, discord.onPlayerJoin)
+  web = new SleepingWeb(settings)
+  await web.init();
 };
-
+const close = async () => {
+  await web.close();
+  logger.info("[Main] ... To be continued ... ");
+};
 main();
