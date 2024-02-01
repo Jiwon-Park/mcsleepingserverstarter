@@ -22,6 +22,7 @@ export class SleepingWeb implements ISleepingServer {
   webPath = "";
   waking = false
   noOneKillEvent?: NodeJS.Timeout = undefined
+  status = -1
 
   constructor(
     settings: Settings
@@ -34,34 +35,36 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
-    setTimeout(this.pingEvent , 30000);
-  }
+    // setTimeout(this.pingEvent , 30000);
 
-  pingEvent = async () => {
-    let currentStatus = await this.getStatus();
-    if ( this.waking && (currentStatus == undefined || currentStatus >= 0 ) )this.waking = false
-
-    if ( this.noOneKillEvent == undefined && ( currentStatus == 0 || currentStatus == undefined )) {
-
-      this.logger.info(`[WebServer] No one is on the server, starting the 10 minute timer.`)
-      this.noOneKillEvent = setTimeout(async () => {
-        let currentStatus = await this.getStatus();
-        if (currentStatus == 0 || currentStatus == undefined) {
-          this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
-          this.killMinecraft(false);
-        }
+    setInterval(async () => {
+      this.status = await this.getStatus();
+      if ( this.waking && (this.status == undefined || this.status >= 0 ) )this.waking = false
+  
+      if ( this.noOneKillEvent == undefined && ( this.status == 0 || this.status == undefined )) {
+  
+        this.logger.info(`[WebServer] No one is on the server, starting the 10 minute timer.`)
+        this.noOneKillEvent = setTimeout(async () => {
+          let currentStatus = await this.getStatus();
+          if (currentStatus == 0 || currentStatus == undefined) {
+            this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
+            this.killMinecraft(false);
+          }
+          this.noOneKillEvent = undefined
+        }, 600000);
+  
+      }
+  
+      else if (this.noOneKillEvent && this.status != undefined && this.status > 0) {
+        this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
+        clearTimeout(this.noOneKillEvent);
         this.noOneKillEvent = undefined
-      }, 600000);
-
-    }
-
-    else if (this.noOneKillEvent && currentStatus != undefined && currentStatus > 0) {
-      this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
-      clearTimeout(this.noOneKillEvent);
-      this.noOneKillEvent = undefined
-    }
-    setTimeout(this.pingEvent, 30000);
+      }
+    }, 3000)
   }
+  
+
+  
 
   getIp = (socket: Socket) => {
     return this.settings.hideIpInLogs ? "" : `(${socket.remoteAddress})`;
@@ -168,7 +171,7 @@ export class SleepingWeb implements ISleepingServer {
     })
 
     this.app.get(`${this.webPath}/status`, async (req, res) => {
-      const status = this.resolveStatus(await this.getStatus());
+      const status = this.resolveStatus(this.status);
       res.json({
         status,
         dynmap: this.settings.webServeDynmap,
@@ -208,7 +211,7 @@ export class SleepingWeb implements ISleepingServer {
 
   getStatus = async () => {
     
-    let pingres = await ping({host:"craft.seni.kr", port:25565, version: "1.19.4"}).catch((e) => {return -1})
+    let pingres = await ping({host:"craft.seni.kr", port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
     if (typeof pingres == "number") {
       return pingres
     }

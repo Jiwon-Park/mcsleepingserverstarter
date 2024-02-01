@@ -1,6 +1,6 @@
 # settings for SleepingServerStarter
 
-serverName: "SleepingServer, waiting for his prince..."
+serverName: "버튼은 한번만 누르세요"
 # serverMOTD: "SleepingServer, waiting for his prince... [MOTD]" # The server name to display in Minecraft, defaults to serverName if not set
 
 serverPort: 25565
