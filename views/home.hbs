@@ -5,14 +5,27 @@
     startClick = () => {
         console.log('WakeUp');
         $.post('./wakeup', {})
-            .done((sucess) => { console.log('WakeUp Sucess', sucess); $('#server-status').text(`🟧 시작 중 🟧`); $('#wakeup-button').text('...5~7분 소요됩니다...'); })
+            .done((sucess) => { 
+                console.log('WakeUp Sucess', sucess); 
+                if($('#server-status').text() === '🛑 서버 꺼짐 🛑'){
+                    $('#server-status').text(`🟧 시작 중 🟧`); 
+                    $('#wakeup-button').text('...5~7분 소요됩니다...'); 
+                } else if ($('#server-status').text().includes('Running')) {
+                    $('#server-status').text(`🟧 종료 중 🟧`); 
+                    $('#wakeup-button').text('...1~2분 소요됩니다...'); 
+                }
+            })
             .fail((error) => { console.log('WakeUp Error', error); })
     };
 
     restartClick = () => {
         console.log('Restart');
         $.post('./restart', {})
-            .done((sucess) => { console.log('Restart Sucess', sucess); })
+            .done((sucess) => { 
+                console.log('Restart Sucess', sucess); 
+                $('#server-status').text(`🟧 재시작 중 🟧`);
+                $('#restart-button').text('...8~10분 소요됩니다...');
+            })
             .fail((error) => { console.log('Restart Error', error); })
     };
 
