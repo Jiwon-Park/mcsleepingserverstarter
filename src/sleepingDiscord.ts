@@ -8,8 +8,6 @@ type DiscordContent = {
     title: string;
     color: number;
   }[];
-  username: string;
-  avatar_url: string;
 };
 
 export class SleepingDiscord {
@@ -42,18 +40,15 @@ export class SleepingDiscord {
     }
   };
 
-  onPlayerLogging = async (player: Player) => {
+  onServerStart = async () => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `⏰ ${player} woke up the server !`,
+          title: `서버가 켜졌습니다!`,
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, true);
   };
@@ -63,13 +58,10 @@ export class SleepingDiscord {
       content: null,
       embeds: [
         {
-          title: "💤 Server has shut down.",
-          color: 25344,
+          title: "서버가 꺼졌습니다.",
+          color: 12260372,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   };
@@ -83,9 +75,6 @@ export class SleepingDiscord {
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   }
@@ -99,9 +88,6 @@ export class SleepingDiscord {
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   }

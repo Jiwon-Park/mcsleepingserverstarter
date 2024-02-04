@@ -23,11 +23,13 @@ export class SleepingWeb implements ISleepingServer {
   waking = false
   noOneKillEvent?: NodeJS.Timeout = undefined
   status = -1
+  discord: SleepingDiscord;
 
   constructor(
     settings: Settings
   ) {
     this.settings = settings;
+    this.discord = new SleepingDiscord(settings);
     if (this.settings.webSubPath) {
       this.webPath = this.settings.webSubPath;
     }
@@ -39,7 +41,10 @@ export class SleepingWeb implements ISleepingServer {
 
     setInterval(async () => {
       this.status = await this.getStatus();
-      if ( this.waking && (this.status == undefined || this.status >= 0 ) )this.waking = false
+      if ( this.waking && (this.status == undefined || this.status >= 0 ) ) {
+        this.discord.onServerStart()
+        this.waking = false
+      }
   
       if ( this.noOneKillEvent == undefined && ( this.status == 0 || this.status == undefined )) {
   
@@ -263,6 +268,7 @@ export class SleepingWeb implements ISleepingServer {
       `[WebServer] Killing Minecraft Server, restart: ${restart}`
     );
     if (this.settings.stopCommand) {
+      this.discord.onServerStop()
       let proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error stopping server: ${error}`);
