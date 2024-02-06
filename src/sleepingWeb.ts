@@ -1,16 +1,15 @@
 import express, { Express } from "express";
-import { existsSync } from "fs";
 import { engine } from "express-handlebars";
 import * as http from "http";
 import path from "path";
 import { SleepingDiscord } from "./sleepingDiscord";
-import { getFavIcon, getMOTD, getMinecraftDirectory, ServerStatus } from "./sleepingHelper";
+import { getFavIcon, getMOTD, ServerStatus } from "./sleepingHelper";
 import { getLogger, LoggerType } from "./sleepingLogger";
 import { ISleepingServer } from "./sleepingServerInterface";
 import { Settings } from "./sleepingSettings";
 import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
-import { NewPingResult, ping } from "minecraft-protocol";
+import { ping } from "minecraft-protocol";
 import { exec } from "child_process";
 
 export class SleepingWeb implements ISleepingServer {
@@ -25,6 +24,9 @@ export class SleepingWeb implements ISleepingServer {
   status = -1
   discord: SleepingDiscord;
 
+  PING_INTERVAL = 10000 as const; // 10 seconds
+  STOPPING_TIMEOUT_MIN = 10 as const; // 10 minutes
+
   constructor(
     settings: Settings
   ) {
@@ -37,10 +39,12 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
-    // setTimeout(this.pingEvent , 30000);
-
-    setInterval(async () => {
-      this.status = await this.getStatus();
+    this.pingEvent()
+  }
+  
+  pingEvent = async () => {
+    this.getOnlineUserCnt().then((status) => {
+      this.status = status
       if ( this.waking && (this.status == undefined || this.status >= 0 ) ) {
         this.discord.onServerStart()
         this.waking = false
@@ -48,15 +52,14 @@ export class SleepingWeb implements ISleepingServer {
   
       if ( this.noOneKillEvent == undefined && ( this.status == 0 || this.status == undefined )) {
   
-        this.logger.info(`[WebServer] No one is on the server, starting the 10 minute timer.`)
+        this.logger.info(`[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`)
         this.noOneKillEvent = setTimeout(async () => {
-          let currentStatus = await this.getStatus();
-          if (currentStatus == 0 || currentStatus == undefined) {
+          if (this.status == 0 || this.status == undefined) {
             this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
             this.killMinecraft(false);
           }
           this.noOneKillEvent = undefined
-        }, 600000);
+        }, this.STOPPING_TIMEOUT_MIN * 60000 ); // 10 minutes
   
       }
   
@@ -65,10 +68,10 @@ export class SleepingWeb implements ISleepingServer {
         clearTimeout(this.noOneKillEvent);
         this.noOneKillEvent = undefined
       }
-    }, 10000)
+      setTimeout(this.pingEvent, this.PING_INTERVAL);
+    });
+    
   }
-  
-
   
 
   getIp = (socket: Socket) => {
@@ -110,7 +113,7 @@ export class SleepingWeb implements ISleepingServer {
       express.static(path.join(__dirname, "./views/res"))
     );
 
-    this.configureDynmap();
+    // this.configureDynmap();
 
     this.app.get(`${this.webPath}/`, (req, res) => {
       res.render(path.join(__dirname, "./views/home"), {
@@ -121,7 +124,7 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/wakeup`, async (req, res) => {
       res.send("received");
 
-      const currentStatus = this.resolveStatus(await this.getStatus());
+      const currentStatus = this.resolveStatus(await this.getOnlineUserCnt());
 
 
       switch (currentStatus) {
@@ -194,28 +197,28 @@ export class SleepingWeb implements ISleepingServer {
     });
   };
 
-  configureDynmap = () => {
-    if (this.settings.webServeDynmap) {
-      let dynmapPath;
-      if (typeof this.settings.webServeDynmap === "string") {
-        dynmapPath = this.settings.webServeDynmap;
-        if (dynmapPath.includes("http")) {
-          return;
-        }
-      } else {
-        dynmapPath = path.join(getMinecraftDirectory(this.settings), "plugins/dynmap/web");
-      }
-      this.logger.info(`[WebServer] Serving dynmap: ${dynmapPath}`);
-      if (existsSync(dynmapPath)) {
-        this.app.use(`${this.webPath}/dynmap`, express.static(dynmapPath));
-      } else {
-        this.logger.error(`Dynmap directory at ${dynmapPath} does not exist!`);
-      }
-    }
-  };
+  // configureDynmap = () => {
+  //   if (this.settings.webServeDynmap) {
+  //     let dynmapPath;
+  //     if (typeof this.settings.webServeDynmap === "string") {
+  //       dynmapPath = this.settings.webServeDynmap;
+  //       if (dynmapPath.includes("http")) {
+  //         return;
+  //       }
+  //     } else {
+  //       dynmapPath = path.join(getMinecraftDirectory(this.settings), "plugins/dynmap/web");
+  //     }
+  //     this.logger.info(`[WebServer] Serving dynmap: ${dynmapPath}`);
+  //     if (existsSync(dynmapPath)) {
+  //       this.app.use(`${this.webPath}/dynmap`, express.static(dynmapPath));
+  //     } else {
+  //       this.logger.error(`Dynmap directory at ${dynmapPath} does not exist!`);
+  //     }
+  //   }
+  // };
 
-  getStatus = async () => {
-    
+  getOnlineUserCnt = async () => {
+    this.logger.info(`[WebServer] Getting server status`);
     let pingres = await ping({host:"craft.seni.kr", port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
     if (typeof pingres == "number") {
       return pingres
@@ -253,7 +256,7 @@ export class SleepingWeb implements ISleepingServer {
         if (stderr) {
           this.logger.warn(`[WebServer] Error/Warn starting server: ${stderr}`);
         }
-        this.logger.info(`[WebServer] Started server: ${stdout}`);
+        this.logger.info(`[WebServer] Started server: ${stdout}\n------------------`);
       });
     }
     else {
@@ -268,7 +271,6 @@ export class SleepingWeb implements ISleepingServer {
       `[WebServer] Killing Minecraft Server, restart: ${restart}`
     );
     if (this.settings.stopCommand) {
-      this.discord.onServerStop()
       let proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error stopping server: ${error}`);
@@ -276,9 +278,9 @@ export class SleepingWeb implements ISleepingServer {
         }
         if (stderr) {
           this.logger.error(`[WebServer] Error stopping server: ${stderr}`);
-          return;
         }
-        this.logger.info(`[WebServer] Stopped server: ${stdout}`);
+        this.logger.info(`[WebServer] Stopped server: ${stdout}\n------------------`);
+        this.discord.onServerStop()
       });
       
       if (restart) {
