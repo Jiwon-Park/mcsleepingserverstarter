@@ -43,7 +43,7 @@ process.on("uncaughtException", (err: Error) => {
 let web: SleepingWeb;
 const main = async () => {
   web = new SleepingWeb(settings)
-  await web.init();
+  web.init();
 };
 const close = async () => {
   await web.close();
