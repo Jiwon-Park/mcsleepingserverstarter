@@ -11,6 +11,7 @@ import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
 import { ping } from "minecraft-protocol";
 import { exec } from "child_process";
+import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
@@ -21,8 +22,10 @@ export class SleepingWeb implements ISleepingServer {
   webPath = "";
   waking = false
   noOneKillEvent?: NodeJS.Timeout = undefined
+  client = new EC2Client({region: 'ap-northeast-2'})
   status = -1
   discord: SleepingDiscord;
+  minecraftHost = ''
 
   PING_INTERVAL = 10000 as const; // 10 seconds
   STOPPING_TIMEOUT_MIN = 10 as const; // 10 minutes
@@ -217,9 +220,40 @@ export class SleepingWeb implements ISleepingServer {
   //   }
   // };
 
+  getHostName = async () => {
+    const command = new DescribeInstancesCommand({
+      Filters: [
+        {
+          Name: "tag:aws:autoscaling:groupName",
+          Values: ["minecraft"]
+        }
+      ]
+    })
+    const {Reservations} = await this.client.send(command);
+    if (Reservations == undefined || Reservations.length == 0) {
+      return "craft.seni.kr"
+    }
+    const instance = Reservations.flatMap(({Instances}) => Instances)[0];
+    //@ts-ignore
+    // this.logger.info(`[WebServer] Found instance: ${instance.PrivateIpAddress}`)
+    if (instance == undefined) {
+      return "craft.seni.kr"
+    }
+    return instance.PrivateIpAddress ?? "craft.seni.kr"
+  }
+
   getOnlineUserCnt = async () => {
     this.logger.info(`[WebServer] Getting server status`);
-    let pingres = await ping({host:"172.31.32.2", port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
+    let hostname = ""
+    try{
+      hostname = await this.getHostName()
+    } catch(e) {
+      this.logger.error(`[WebServer] Error getting hostname: ${e}`)
+      hostname = "craft.seni.kr"
+    }
+
+
+    let pingres = await ping({host: hostname, port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
     if (typeof pingres == "number") {
       this.logger.info(`[WebServer] Server is not responding`)
       return pingres
