@@ -219,7 +219,7 @@ export class SleepingWeb implements ISleepingServer {
 
   getOnlineUserCnt = async () => {
     this.logger.info(`[WebServer] Getting server status`);
-    let pingres = await ping({host:"craft.seni.kr", port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
+    let pingres = await ping({host:"172.31.32.2", port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
     if (typeof pingres == "number") {
       this.logger.info(`[WebServer] Server is not responding`)
       return pingres
