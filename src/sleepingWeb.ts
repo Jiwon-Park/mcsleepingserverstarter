@@ -248,10 +248,12 @@ export class SleepingWeb implements ISleepingServer {
     try{
       hostname = await this.getHostName()
     } catch(e) {
-      this.logger.error(`[WebServer] Error getting hostname: ${e}`)
+      
       hostname = "craft.seni.kr"
     }
-
+    if(hostname == "craft.seni.kr") {
+      this.logger.error(`[WebServer] Error getting hostname`)
+    }
 
     let pingres = await ping({host: hostname, port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
     if (typeof pingres == "number") {
