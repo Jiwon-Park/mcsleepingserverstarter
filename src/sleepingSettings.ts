@@ -1,6 +1,6 @@
 import { writeFileSync, readFileSync } from "fs";
 import { dump, load } from "js-yaml";
-import { getLogger } from "./sleepingLogger";
+import { getLogger } from "./sleepingLogger.js";
 // import { getMinecraftDirectory, loadFile } from "./sleepingHelper";
 import path from "path";
 

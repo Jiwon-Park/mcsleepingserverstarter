@@ -1,6 +1,6 @@
-import { getLogger, LoggerType } from "./sleepingLogger";
-import { Settings } from "./sleepingSettings";
-import { Player } from "./sleepingTypes";
+import { getLogger, LoggerType } from "./sleepingLogger.js";
+import { Settings } from "./sleepingSettings.js";
+import { Player } from "./sleepingTypes.js";
 
 type DiscordContent = {
   content: null;
