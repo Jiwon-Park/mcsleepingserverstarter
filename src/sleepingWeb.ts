@@ -13,6 +13,8 @@ import { Player, PlayerConnectionCallBackType } from "./sleepingTypes.js";
 import { Socket } from "node:net";
 import pkg from "minecraft-protocol";
 import { exec } from "child_process";
+import { fileURLToPath } from 'url';
+const __dirname = fileURLToPath(import.meta.url);
 
 const {ping} = pkg;
 
@@ -96,7 +98,7 @@ export class SleepingWeb implements ISleepingServer {
       "hbs",
       engine({
         defaultLayout: "main",
-        layoutsDir: path.join(import.meta.url, "../views/layouts/"),
+        layoutsDir: path.join(__dirname, "../views/layouts/"),
         extname: ".hbs",
         helpers: {
           title: () => {
@@ -118,18 +120,18 @@ export class SleepingWeb implements ISleepingServer {
     this.app.set("view engine", "hbs");
     this.app.use(
       `${this.webPath}/layouts`,
-      express.static(path.join(import.meta.url, "../views/layouts"))
+      express.static(path.join(__dirname, "../views/layouts"))
     );
 
     this.app.use(
       `${this.webPath}/res`,
-      express.static(path.join(import.meta.url, "../views/res"))
+      express.static(path.join(__dirname, "../views/res"))
     );
 
     // this.configureDynmap();
 
     this.app.get(`${this.webPath}/`, (req, res) => {
-      res.render(path.join(import.meta.url, "../views/home"), {
+      res.render(path.join(__dirname, "../views/home"), {
         message: this.settings.loginMessage,
       });
     });
