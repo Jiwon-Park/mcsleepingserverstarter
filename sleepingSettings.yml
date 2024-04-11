@@ -40,3 +40,4 @@ stopCommand: "/opt/bitnami/projects/mining-camp/stop.sh"
 
 # /!\ Edit this setting only if you know what you are doing
 # minecraftWorkingDirectory: "" # Set a custom working directory (path to minecraft server folder)
+webKey: "REPLACE_ME" # A secret key to secure the web server

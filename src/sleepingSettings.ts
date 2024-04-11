@@ -4,7 +4,7 @@ import { getLogger } from "./sleepingLogger";
 // import { getMinecraftDirectory, loadFile } from "./sleepingHelper";
 import path from "path";
 
-import PropertiesReader = require('properties-reader');
+import PropertiesReader from 'properties-reader';
 
 const logger = getLogger();
 
@@ -48,6 +48,7 @@ export type Settings = {
   useNativeFiles: boolean;
   hideIpInLogs?: boolean;
   hideOnConnectionLogs?: boolean;
+  webKey?: string;
 };
 
 export const DefaultSettings: Settings = {
