@@ -1,5 +1,7 @@
 import express, { Express } from "express";
 import { engine } from "express-handlebars";
+import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
+import { UpdateDomainEntryCommand, GetDomainCommand, LightsailClient } from "@aws-sdk/client-lightsail"
 import * as http from "http";
 import path from "path";
 import { SleepingDiscord } from "./sleepingDiscord";
@@ -9,9 +11,8 @@ import { ISleepingServer } from "./sleepingServerInterface";
 import { Settings } from "./sleepingSettings";
 import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
 import { Socket } from "node:net";
-import { ping } from "minecraft-protocol";
+import { ping, OldPingResult, NewPingResult } from "minecraft-protocol";
 import { exec } from "child_process";
-import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
@@ -23,11 +24,12 @@ export class SleepingWeb implements ISleepingServer {
   waking = false
   noOneKillEvent?: NodeJS.Timeout = undefined
   client = new EC2Client({region: 'ap-northeast-2'})
+  LSclient = new LightsailClient({region: 'us-east-1'})
   status = -1
   discord: SleepingDiscord;
   minecraftHost = ''
 
-  PING_INTERVAL = 10000 as const; // 10 seconds
+  PING_INTERVAL = 60000 as const; // 60 seconds
   STOPPING_TIMEOUT_MIN = 10 as const; // 10 minutes
 
   constructor(
@@ -42,38 +44,44 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
-    this.pingEvent()
   }
   
   pingEvent = async () => {
-    this.getOnlineUserCnt().then((status) => {
-      this.status = status
-      if ( this.waking && (this.status == undefined || this.status >= 0 ) ) {
-        this.discord.onServerStart()
-        this.waking = false
-      }
-  
-      if ( this.noOneKillEvent == undefined && ( this.status == 0 || this.status == undefined )) {
-  
-        this.logger.info(`[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`)
-        this.noOneKillEvent = setTimeout(async () => {
-          if (this.status == 0 || this.status == undefined) {
-            this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
-            this.killMinecraft(false);
-          }
-          this.noOneKillEvent = undefined
-        }, this.STOPPING_TIMEOUT_MIN * 60000 ); // 10 minutes
-  
-      }
-  
-      else if (this.noOneKillEvent && this.status != undefined && this.status > 0) {
-        this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
-        clearTimeout(this.noOneKillEvent);
-        this.noOneKillEvent = undefined
-      }
-      setTimeout(this.pingEvent, this.PING_INTERVAL);
-    });
+    if (this.waking || this.status > -1) {
+      this.getOnlineUserCnt().then((status) => {
+
+        if (this.status >= 0 && status == -1) {
+          this.logger.info(`[WebServer] Server is not responding.`)
+          this.discord.onServerStop()
+        }
+
+        this.status = status
+        if ( this.waking && this.status >= 0 ) {
+          this.discord.onServerStart()
+          this.waking = false
+        }
     
+        if ( this.noOneKillEvent == undefined && this.status == 0 ) {
+    
+          this.logger.info(`[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`)
+          this.noOneKillEvent = setTimeout(async () => {
+            if (this.status == 0 || this.status == undefined) {
+              this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
+              this.killMinecraft(false);
+            }
+            this.noOneKillEvent = undefined
+          }, this.STOPPING_TIMEOUT_MIN * 60000 ); // 10 minutes
+    
+        }
+    
+        else if (this.noOneKillEvent && this.status > 0) {
+          this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
+          clearTimeout(this.noOneKillEvent);
+          this.noOneKillEvent = undefined
+        }
+        setTimeout(this.pingEvent, this.PING_INTERVAL);
+      });
+    }
   }
   
 
@@ -140,6 +148,7 @@ export class SleepingWeb implements ISleepingServer {
             );
             this.playerConnectionCallBack(Player.web());
             this.waking = true
+            this.pingEvent()
           }
           break;
         case ServerStatus.Running:
@@ -193,6 +202,39 @@ export class SleepingWeb implements ISleepingServer {
       });
     });
 
+    this.app.post(`${this.webPath}/change_dns`, async (req, res) => {
+      if(req.body.key == this.settings.webKey) {
+        const getDomain = new GetDomainCommand({
+          domainName: "seni.kr"
+        })
+        const resp = await this.LSclient.send(getDomain)
+        //find matching domainEntry from req.body.hostname
+        if(resp.domain?.domainEntries) {
+          const domainEntry = resp.domain.domainEntries.find((entry) => entry.name == req.body.hostname)
+          if(domainEntry) {
+            const updateDomain = new UpdateDomainEntryCommand({
+              domainName: "seni.kr",
+              domainEntry: {
+                id: domainEntry.id,
+                name: domainEntry.name,
+                target: req.body.ip,
+                type: domainEntry.type
+              }
+            })
+            await this.LSclient.send(updateDomain)
+            res.send("received")
+          }
+          else {
+            res.send("No matching domain entry")
+          }
+        }
+        else {
+          res.send("No domain entry")
+        }
+
+      }
+    });
+
     this.server = this.app.listen(this.settings.webPort, () => {
       this.logger.info(
         `[WebServer] Starting web server on *: ${this.settings.webPort}`
@@ -234,8 +276,6 @@ export class SleepingWeb implements ISleepingServer {
       return "craft.seni.kr"
     }
     const instance = Reservations.flatMap(({Instances}) => Instances)[0];
-    //@ts-ignore
-    // this.logger.info(`[WebServer] Found instance: ${instance.PrivateIpAddress}`)
     if (instance == undefined) {
       return "craft.seni.kr"
     }
@@ -248,28 +288,36 @@ export class SleepingWeb implements ISleepingServer {
     try{
       hostname = await this.getHostName()
     } catch(e) {
-      
       hostname = "craft.seni.kr"
     }
     if(hostname == "craft.seni.kr") {
       this.logger.error(`[WebServer] Error getting hostname`)
     }
-
-    let pingres = await ping({host: hostname, port:25565, version: "1.19.4", closeTimeout: 2000}).catch((e) => {return -1})
-    if (typeof pingres == "number") {
-      this.logger.info(`[WebServer] Server is not responding`)
-      return pingres
-    }
-    if ("playerCount" in pingres) {
-      this.logger.info(`[WebServer] Server is responding with ${pingres.playerCount} players`)
-      return pingres.playerCount
-    } else if ("players" in pingres) {
-      this.logger.info(`[WebServer] Server is responding with ${pingres.players.online} players`)
-      return pingres.players.online;
-    } else {
-      this.logger.info(`[WebServer] Server is not responding`)
-      return -1;
-    }
+    
+    let pingres = -1
+    ping(
+      {host: hostname, port:25565, version: "1.19.4"},
+      (err, res) : void => {
+        if (err) {
+          this.logger.error(`[WebServer] Error getting server status: ${err}`)
+          pingres = -1
+        }
+        else if(res) {
+          if('players' in res) {
+            pingres = res.players.online
+          }
+          else {
+            pingres = res.playerCount
+          }
+          this.logger.info(`[WebServer] Server is responding with ${pingres} players`)
+        }
+        else {
+          pingres = -1
+          this.logger.info(`[WebServer] Server is not responding`)
+        }
+      }
+    )
+    return pingres
   }
 
   resolveStatus = (status: number) => {
@@ -288,7 +336,7 @@ export class SleepingWeb implements ISleepingServer {
   startMinecraft = async (player: Player) => {
     this.logger.info(`[WebServer] Starting Minecraft Server`);
     if (this.settings.minecraftCommand) {
-      let proc = exec(this.settings.minecraftCommand, (error, stdout, stderr) => {
+      const proc = exec(this.settings.minecraftCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error starting server: ${error}`);
           return;
@@ -311,7 +359,7 @@ export class SleepingWeb implements ISleepingServer {
       `[WebServer] Killing Minecraft Server, restart: ${restart}`
     );
     if (this.settings.stopCommand) {
-      let proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
+      const proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error stopping server: ${error}`);
           return;
@@ -324,7 +372,9 @@ export class SleepingWeb implements ISleepingServer {
       });
       
       if (restart) {
-        proc.on('exit', () => { this.playerConnectionCallBack(Player.web()) });
+        proc.on('exit', () => { setTimeout(() => {
+          this.playerConnectionCallBack(Player.web())
+        }, 10000)});
       }
     }
     else {

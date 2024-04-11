@@ -40,3 +40,4 @@ discordWebhookUrl: "https://discord.com/api/webhooks/1124017685651542096/ehkqSKA
 
 # /!\ Edit this setting only if you know what you are doing
 # minecraftWorkingDirectory: "" # Set a custom working directory (path to minecraft server folder)
+webKey: "seniorious28" # A secret key to secure the web server
