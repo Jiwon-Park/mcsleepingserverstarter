@@ -23,7 +23,7 @@ stopCommand: "/opt/bitnami/projects/mining-camp/stop.sh"
 
 # preventStop: true # Prevent the user to stop the server (trought web-server or cli).
 
-# discordWebhookUrl: "https://discord.com/api/webhooks/REPLACE_ME"
+discordWebhookUrl: "https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb"
 
 # blackListedAddress: ["149.102.143.151", "132.145.71.44", "45.128.232.206", "193.35.18."]
 # whiteListedNames: ["Seni28"]
