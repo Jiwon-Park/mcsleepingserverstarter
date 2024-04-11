@@ -4,7 +4,7 @@ import { createConnection } from "net";
 import { autoToHTML, cleanTags } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
 import { LATEST_MINECRAFT_VERSION } from "./version";
-import { getLogger } from "./sleepingLogger";
+import { getLogger } from "./sleepingLogger.js";
 import { AccessFileSettings, Settings } from "./sleepingSettings.js";
 import { AccessStatus, Player } from "./sleepingTypes.js";
 import { load } from "js-yaml";
