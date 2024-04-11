@@ -4,12 +4,12 @@ import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
 import { UpdateDomainEntryCommand, GetDomainCommand, LightsailClient } from "@aws-sdk/client-lightsail"
 import * as http from "http";
 import path from "path";
-import { SleepingDiscord } from "./sleepingDiscord";
-import { getFavIcon, getMOTD, ServerStatus } from "./sleepingHelper";
-import { getLogger, LoggerType } from "./sleepingLogger";
-import { ISleepingServer } from "./sleepingServerInterface";
-import { Settings } from "./sleepingSettings";
-import { Player, PlayerConnectionCallBackType } from "./sleepingTypes";
+import { SleepingDiscord } from "./sleepingDiscord.js";
+import { getFavIcon, getMOTD, ServerStatus } from "./sleepingHelper.js";
+import { getLogger, LoggerType } from "./sleepingLogger.js";
+import { ISleepingServer } from "./sleepingServerInterface.js";
+import { Settings } from "./sleepingSettings.js";
+import { Player, PlayerConnectionCallBackType } from "./sleepingTypes.js";
 import { Socket } from "node:net";
 import { ping, OldPingResult, NewPingResult } from "minecraft-protocol";
 import { exec } from "child_process";

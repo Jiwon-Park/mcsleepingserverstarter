@@ -5,8 +5,8 @@ import { autoToHTML, cleanTags } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
 import { LATEST_MINECRAFT_VERSION } from "./version";
 import { getLogger } from "./sleepingLogger";
-import { AccessFileSettings, Settings } from "./sleepingSettings";
-import { AccessStatus, Player } from "./sleepingTypes";
+import { AccessFileSettings, Settings } from "./sleepingSettings.js";
+import { AccessStatus, Player } from "./sleepingTypes.js";
 import { load } from "js-yaml";
 
 export const isInDev = () => {
