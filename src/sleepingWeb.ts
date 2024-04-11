@@ -11,8 +11,10 @@ import { ISleepingServer } from "./sleepingServerInterface.js";
 import { Settings } from "./sleepingSettings.js";
 import { Player, PlayerConnectionCallBackType } from "./sleepingTypes.js";
 import { Socket } from "node:net";
-import { ping, OldPingResult, NewPingResult } from "minecraft-protocol";
+import pkg from "minecraft-protocol";
 import { exec } from "child_process";
+
+const {ping} = pkg;
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
