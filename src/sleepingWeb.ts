@@ -96,7 +96,7 @@ export class SleepingWeb implements ISleepingServer {
       "hbs",
       engine({
         defaultLayout: "main",
-        layoutsDir: path.join(__dirname, "./views/layouts/"),
+        layoutsDir: path.join(import.meta.url, "./views/layouts/"),
         extname: ".hbs",
         helpers: {
           title: () => {
@@ -118,18 +118,18 @@ export class SleepingWeb implements ISleepingServer {
     this.app.set("view engine", "hbs");
     this.app.use(
       `${this.webPath}/layouts`,
-      express.static(path.join(__dirname, "./views/layouts"))
+      express.static(path.join(import.meta.url, "./views/layouts"))
     );
 
     this.app.use(
       `${this.webPath}/res`,
-      express.static(path.join(__dirname, "./views/res"))
+      express.static(path.join(import.meta.url, "./views/res"))
     );
 
     // this.configureDynmap();
 
     this.app.get(`${this.webPath}/`, (req, res) => {
-      res.render(path.join(__dirname, "./views/home"), {
+      res.render(path.join(import.meta.url, "./views/home"), {
         message: this.settings.loginMessage,
       });
     });
