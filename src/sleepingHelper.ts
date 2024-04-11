@@ -3,7 +3,7 @@ import path from "path";
 import { createConnection } from "net";
 import { autoToHTML, cleanTags } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
-import { LATEST_MINECRAFT_VERSION } from "./version";
+import { LATEST_MINECRAFT_VERSION } from "./version.js";
 import { getLogger } from "./sleepingLogger.js";
 import { AccessFileSettings, Settings } from "./sleepingSettings.js";
 import { AccessStatus, Player } from "./sleepingTypes.js";
