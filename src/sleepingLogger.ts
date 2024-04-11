@@ -1,7 +1,6 @@
 import { existsSync, mkdirSync } from "fs";
 import { createLogger, format, transports, transport } from "winston";
 
-export const { version } = require("../package.json"); // eslint-disable-line
 
 const DefaultLogger = {
   info: console.info,
@@ -64,7 +63,7 @@ export const getLogger = () => {
     logger = DefaultLogger;
   }
   initialized = true;
-  const msg = `... A new story begin v${version} ...`;
+  const msg = `... A new story begin ...`;
   const separator = msg.replace(/./g, ".");
   logger.info(separator);
   logger.info(msg);
