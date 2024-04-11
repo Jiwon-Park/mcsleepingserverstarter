@@ -71,8 +71,8 @@ export const getMOTD = (
     // This automatically escapes any tags in the serverName to prevent XSS
     return autoToHTML(motd);
   }
-
-  return ChatMessage(settings.version || LATEST_MINECRAFT_VERSION)
+  //@ts-expect-error There are Call signature in js
+  return ChatMessage(settings.version || LATEST_MINECRAFT_VERSION)  
     .MessageBuilder.fromString(motd, { colorSeparator: "§" })
     .toJSON();
 };
