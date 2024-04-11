@@ -1,7 +1,7 @@
-import { SleepingDiscord } from "./sleepingDiscord";
-import { getLogger, LoggerType } from "./sleepingLogger";
-import { getSettings, Settings } from "./sleepingSettings";
-import { SleepingWeb } from "./sleepingWeb";
+import { SleepingDiscord } from "./sleepingDiscord.js";
+import { getLogger, LoggerType } from "./sleepingLogger.js";
+import { getSettings, Settings } from "./sleepingSettings.js";
+import { SleepingWeb } from "./sleepingWeb.js";
 
 const logger: LoggerType = getLogger();
 const settings = getSettings()
