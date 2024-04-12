@@ -53,18 +53,24 @@ export class SleepingWeb implements ISleepingServer {
   pingEvent = async () => {
     if (this.waking || this.status > -1) {
       this.getOnlineUserCnt().then((status) => {
-
+	if(status == undefined){
+          status = 0
+        }
         if (this.status >= 0 && status == -1) {
           this.logger.info(`[WebServer] Server is not responding.`)
           this.discord.onServerStop()
+          this.status = status
+          return
         }
-
+	this.logger.info("status and waking")
+	this.logger.info(this.status)
+        this.logger.info(this.waking)
         this.status = status
         if ( this.waking && this.status >= 0 ) {
           this.discord.onServerStart()
           this.waking = false
+          this.logger.info('waking is now false')
         }
-    
         if ( this.noOneKillEvent == undefined && this.status == 0 ) {
     
           this.logger.info(`[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`)
@@ -75,7 +81,6 @@ export class SleepingWeb implements ISleepingServer {
             }
             this.noOneKillEvent = undefined
           }, this.STOPPING_TIMEOUT_MIN * 60000 ); // 10 minutes
-    
         }
     
         else if (this.noOneKillEvent && this.status > 0) {
@@ -118,6 +123,7 @@ export class SleepingWeb implements ISleepingServer {
     );
 
     this.app.set("view engine", "hbs");
+    this.app.use( express.json() );
     this.app.use(
       `${this.webPath}/layouts`,
       express.static(path.join(__dirname, "../views/layouts"))
@@ -207,6 +213,7 @@ export class SleepingWeb implements ISleepingServer {
     });
 
     this.app.post(`${this.webPath}/change_dns`, async (req, res) => {
+      this.logger.info(`${req.body.key}, ${req.body.ip}, ${req.body.hostname}`)
       if(req.body.key == this.settings.webKey) {
         const getDomain = new GetDomainCommand({
           domainName: "seni.kr"
@@ -225,7 +232,8 @@ export class SleepingWeb implements ISleepingServer {
                 type: domainEntry.type
               }
             })
-            await this.LSclient.send(updateDomain)
+            const result = await this.LSclient.send(updateDomain)
+            this.logger.info(result)
             res.send("received")
           }
           else {
@@ -299,28 +307,33 @@ export class SleepingWeb implements ISleepingServer {
     }
     
     let pingres = -1
-    ping(
-      {host: hostname, port:25565, version: "1.19.4"},
-      (err, res) : void => {
-        if (err) {
-          this.logger.error(`[WebServer] Error getting server status: ${err}`)
-          pingres = -1
-        }
-        else if(res) {
-          if('players' in res) {
-            pingres = res.players.online
+    try{
+      await ping(
+        {host: hostname, port:25565, version: "1.19.4"},
+        (err, res) : void => {
+          if (err) {
+            this.logger.error(`[WebServer] Error getting server status: ${err}`)
+            pingres = -1
+          }
+          else if(res) {
+            if('players' in res) {
+              pingres = res.players.online
+            }
+            else {
+              pingres = res.playerCount
+            }
+            this.logger.info(`[WebServer] Server is responding with ${pingres} players`)
           }
           else {
-            pingres = res.playerCount
+            pingres = -1
+            this.logger.info(`[WebServer] Server is not responding`)
           }
-          this.logger.info(`[WebServer] Server is responding with ${pingres} players`)
         }
-        else {
-          pingres = -1
-          this.logger.info(`[WebServer] Server is not responding`)
-        }
-      }
-    )
+      )
+    } catch(e) {
+      this.logger.error(e)
+      pingres = -1
+    }
     return pingres
   }
 
