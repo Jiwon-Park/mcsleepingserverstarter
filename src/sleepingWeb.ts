@@ -225,7 +225,8 @@ export class SleepingWeb implements ISleepingServer {
                 type: domainEntry.type
               }
             })
-            await this.LSclient.send(updateDomain)
+            const result = await this.LSclient.send(updateDomain)
+            this.logger.info(result)
             res.send("received")
           }
           else {
@@ -299,7 +300,7 @@ export class SleepingWeb implements ISleepingServer {
     }
     
     let pingres = -1
-    ping(
+    await ping(
       {host: hostname, port:25565, version: "1.19.4"},
       (err, res) : void => {
         if (err) {
