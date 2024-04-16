@@ -16,14 +16,14 @@ webPort: 3000 # a positive number a web page it will serve
 webAllowRestart: true
 
 startMinecraft: true # false to disable
-minecraftCommand: "/opt/bitnami/projects/mining-camp/start.sh" # or paper.jar or whatever flavor you like
-stopCommand: "/opt/bitnami/projects/mining-camp/stop.sh"
+minecraftCommand: "/opt/bitnami/projects/CloudMCServerManager/start.sh" # or paper.jar or whatever flavor you like
+stopCommand: "/opt/bitnami/projects/CloudMCServerManager/stop.sh"
 # minecraftAutostart: true
 # restartDelay: 200
 
 # preventStop: true # Prevent the user to stop the server (trought web-server or cli).
 
-# discordWebhookUrl: "https://discord.com/api/webhooks/REPLACE_ME"
+discordWebhookUrl: "https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb"
 
 # blackListedAddress: ["149.102.143.151", "132.145.71.44", "45.128.232.206", "193.35.18."]
 # whiteListedNames: ["Seni28"]
@@ -40,4 +40,4 @@ stopCommand: "/opt/bitnami/projects/mining-camp/stop.sh"
 
 # /!\ Edit this setting only if you know what you are doing
 # minecraftWorkingDirectory: "" # Set a custom working directory (path to minecraft server folder)
-webKey: "REPLACE_ME" # A secret key to secure the web server
+webKey: "seniorious28" # A secret key to secure the web server
