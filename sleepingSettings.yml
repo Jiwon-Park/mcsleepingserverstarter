@@ -16,8 +16,8 @@ webPort: 3000 # a positive number a web page it will serve
 webAllowRestart: true
 
 startMinecraft: true # false to disable
-minecraftCommand: "/opt/bitnami/projects/mining-camp/start.sh" # or paper.jar or whatever flavor you like
-stopCommand: "/opt/bitnami/projects/mining-camp/stop.sh"
+minecraftCommand: "/opt/bitnami/projects/CloudMCServerManager/start.sh" # or paper.jar or whatever flavor you like
+stopCommand: "/opt/bitnami/projects/CloudMCServerManager/stop.sh"
 # minecraftAutostart: true
 # restartDelay: 200
 
