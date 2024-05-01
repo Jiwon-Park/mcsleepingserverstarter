@@ -53,17 +53,17 @@ export class SleepingWeb implements ISleepingServer {
   pingEvent = async () => {
     if (this.waking || this.status > -1) {
       this.getOnlineUserCnt().then((status) => {
-	if(status == undefined){
-          status = 0
-        }
-        if (this.status >= 0 && status == -1) {
-          this.logger.info(`[WebServer] Server is not responding.`)
-          this.discord.onServerStop()
-          this.status = status
-          return
-        }
-	this.logger.info("status and waking")
-	this.logger.info(this.status)
+        if(status == undefined){
+                status = 0
+              }
+              if (this.status >= 0 && status == -1) {
+                this.logger.info(`[WebServer] Server is not responding.`)
+                this.discord.onServerStop()
+                this.status = status
+                return
+              }
+        this.logger.info("status and waking")
+        this.logger.info(this.status)
         this.logger.info(this.waking)
         this.status = status
         if ( this.waking && this.status >= 0 ) {
@@ -158,7 +158,6 @@ export class SleepingWeb implements ISleepingServer {
             );
             this.playerConnectionCallBack(Player.web());
             this.waking = true
-            this.pingEvent()
           }
           break;
         case ServerStatus.Running:
@@ -307,18 +306,6 @@ export class SleepingWeb implements ISleepingServer {
     }
     
     let pingres = -1
-<<<<<<< HEAD
-    await ping(
-      {host: hostname, port:25565, version: "1.19.4"},
-      (err, res) : void => {
-        if (err) {
-          this.logger.error(`[WebServer] Error getting server status: ${err}`)
-          pingres = -1
-        }
-        else if(res) {
-          if('players' in res) {
-            pingres = res.players.online
-=======
     try{
       await ping(
         {host: hostname, port:25565, version: "1.19.4"},
@@ -335,7 +322,6 @@ export class SleepingWeb implements ISleepingServer {
               pingres = res.playerCount
             }
             this.logger.info(`[WebServer] Server is responding with ${pingres} players`)
->>>>>>> 3294d0bc36c5b0d420c3482b01a678ccc44a4633
           }
           else {
             pingres = -1
@@ -376,6 +362,8 @@ export class SleepingWeb implements ISleepingServer {
         }
         this.logger.info(`[WebServer] Started server: ${stdout}\n------------------`);
       });
+      
+      this.pingEvent()
     }
     else {
       this.logger.error(
