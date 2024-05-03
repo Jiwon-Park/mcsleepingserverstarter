@@ -48,11 +48,11 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
-    this.pingEvent()
+    this.pingEvent(true)
   }
   
-  pingEvent = async () => {
-    if (this.waking || this.status > -1) {
+  pingEvent = async (ignore_condition = false) => {
+    if (ignore_condition || this.waking || this.status > -1) {
       this.getOnlineUserCnt().then((status) => {
         if(status == undefined){
                 status = 0
