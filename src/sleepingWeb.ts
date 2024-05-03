@@ -48,6 +48,7 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
+    this.pingEvent()
   }
   
   pingEvent = async () => {
@@ -156,8 +157,8 @@ export class SleepingWeb implements ISleepingServer {
                 req.socket
               )} Wake up server was ${currentStatus}`
             );
-            this.playerConnectionCallBack(Player.web());
             this.waking = true
+            this.playerConnectionCallBack(Player.web());
           }
           break;
         case ServerStatus.Running:
