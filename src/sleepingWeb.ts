@@ -362,9 +362,9 @@ export class SleepingWeb implements ISleepingServer {
           this.logger.warn(`[WebServer] Error/Warn starting server: ${stderr}`);
         }
         this.logger.info(`[WebServer] Started server: ${stdout}\n------------------`);
+        this.pingEvent()
       });
       
-      this.pingEvent()
     }
     else {
       this.logger.error(
