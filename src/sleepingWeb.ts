@@ -219,7 +219,11 @@ export class SleepingWeb implements ISleepingServer {
           req.socket
         )} Shutdown server`
       );
-      this.killMinecraft(false, true);
+      setTimeout(() => {
+        this.killMinecraft(false, true);
+        this.waking = false
+      }, 60000);
+      
     });
 
     this.app.post(`${this.webPath}/change_dns`, async (req, res) => {
