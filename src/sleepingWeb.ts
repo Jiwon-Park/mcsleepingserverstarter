@@ -146,8 +146,8 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/wakeup`, async (req, res) => {
       res.send("received");
 
-      const currentStatus = this.resolveStatus(await this.getOnlineUserCnt());
-
+      // const currentStatus = this.resolveStatus(await this.getOnlineUserCnt());
+      const currentStatus = this.resolveStatus(this.status);
 
       switch (currentStatus) {
         case ServerStatus.Sleeping:
@@ -210,6 +210,16 @@ export class SleepingWeb implements ISleepingServer {
           webAllowRestart: this.settings.webAllowRestart,
         },
       });
+    });
+    
+    this.app.post(`${this.webPath}/shutdown`, async (req, res) => {
+      res.send("received");
+      this.logger.info(
+        `[WebServer]${this.getIp(
+          req.socket
+        )} Shutdown server`
+      );
+      this.killMinecraft(false, true);
     });
 
     this.app.post(`${this.webPath}/change_dns`, async (req, res) => {
@@ -373,12 +383,13 @@ export class SleepingWeb implements ISleepingServer {
     }
   }
 
-  killMinecraft = async (restart: boolean) => {
+  killMinecraft = async (restart: boolean, withoutBackup=false) => {
     this.logger.info(
       `[WebServer] Killing Minecraft Server, restart: ${restart}`
     );
     if (this.settings.stopCommand) {
-      const proc = exec(this.settings.stopCommand, (error, stdout, stderr) => {
+      const stopCommand = this.settings.stopCommand + (withoutBackup ? " --extra-vars \"backup=0\"" : " --extra-vars \"backup=1\"")
+      const proc = exec(stopCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error stopping server: ${error}`);
           return;

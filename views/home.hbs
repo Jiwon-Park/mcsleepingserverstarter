@@ -29,6 +29,17 @@
             .fail((error) => { console.log('Restart Error', error); })
     };
 
+    shutdownClick = () => {
+        console.log('Shutdown');
+        $.post('./shutdown', {})
+            .done((sucess) => { 
+                console.log('Shutdown Sucess', sucess); 
+                $('#server-status').text(`🟧 종료 중 🟧`);
+                $('#shutdown-button').text('...1~2분 소요됩니다...');
+            })
+            .fail((error) => { console.log('Shutdown Error', error); })
+    };
+
     getTexts = (status) => {
         let emoji = '🟥'
         let buttonText = '서버 켜기';
@@ -62,8 +73,10 @@
                     $('#wakeup-button').text(buttonText);
                     $('#wakeup-button').css('display', displayWakeBtn);
 
-                    const displayRestart = (settings.webAllowRestart && status === "Running") ? 'unset' : 'none';
-                    $('#restart-button').css('display', displayRestart);
+                    //const displayRestart = (settings.webAllowRestart && status === "Running") ? 'unset' : 'none';
+                    //$('#restart-button').css('display', displayRestart);
+                    const displayShutdown = (status === "Starting") ? 'unset' : 'none';
+                    $('#shutdown-button').css('display', displayShutdown);
 
                     const displayDynmap = dynmap ? 'unset' : 'none';
                     $('#dynmap-button').css('display', displayDynmap);
@@ -109,8 +122,11 @@
         <button id="wakeup-button" class="button secondary actionButton" onclick=" startClick() ">
             Wake Up
         </button>
-        <button id="restart-button" class="button secondary actionButton" style="display: none;" onclick=" restartClick() ">
+        {{!-- <button id="restart-button" class="button secondary actionButton" style="display: none;" onclick=" restartClick() ">
             Restart
+        </button> --}}
+        <button id="shutdown-button" class="button secondary actionButton" style="display: none;" onclick=" shutdownClick() ">
+            Shutdown
         </button>
         <button id="dynmap-button" class="button secondary actionButton" target="_blank" style="display: none;">
             Dynmap
