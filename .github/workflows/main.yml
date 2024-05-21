@@ -23,6 +23,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
+      - name: add an exception for this directory
+        run: git config --global --add safe.directory /github/workspace
+
       - name: Sync up to CodeCommit
         uses: tsgit18/sync-up-to-codecommit-action@v1
         with:
