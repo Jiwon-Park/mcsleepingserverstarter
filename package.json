@@ -8,7 +8,7 @@
   "scripts": {
     "start": "run-s prebuild build:typescript run",
     "start:aws": "yarn run prebuild && yarn run build:typescript && yarn run run:aws",
-    "run:aws": "forever start --minUptime 1000 --spinSleepTime 1000 -a -v \"build/sleepingServerStarter.js\" ./",
+    "run:aws": "nohup nodemon -V ./build/sleepingServerStarter.js ./ &",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
     "prebuild": "rimraf ./build/ ./bin/ && cpx-fixed \"views/**/*.*\" build/views",

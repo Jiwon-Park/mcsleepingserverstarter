@@ -25,7 +25,8 @@ export class SleepingWeb implements ISleepingServer {
   app: Express;
   server?: http.Server;
   webPath = "";
-  waking = false
+  waking = false;
+  stopped = true;
   noOneKillEvent?: NodeJS.Timeout = undefined
   client = new EC2Client({region: 'ap-northeast-2'})
   LSclient = new LightsailClient({region: 'us-east-1'})
@@ -59,7 +60,10 @@ export class SleepingWeb implements ISleepingServer {
               }
               if (this.status >= 0 && status == -1) {
                 this.logger.info(`[WebServer] Server is not responding.`)
-                this.discord.onServerStop()
+                if(this.stopped == false) {
+                   this.discord.onServerStop()
+                   this.stopped = true
+                }
                 this.status = status
                 return
               }
@@ -69,6 +73,7 @@ export class SleepingWeb implements ISleepingServer {
         this.status = status
         if ( this.waking && this.status >= 0 ) {
           this.discord.onServerStart()
+          this.stopped = false
           this.waking = false
           this.logger.info('waking is now false')
         }
@@ -402,7 +407,10 @@ export class SleepingWeb implements ISleepingServer {
           this.logger.error(`[WebServer] Error stopping server: ${stderr}`);
         }
         this.logger.info(`[WebServer] Stopped server: ${stdout}\n------------------`);
-        this.discord.onServerStop()
+        if (this.stopped == false) {
+          this.discord.onServerStop()
+          this.stopped = true
+        }
       });
       
       if (restart) {
