@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import { engine } from "express-handlebars";
 import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
 import { UpdateDomainEntryCommand, GetDomainCommand, LightsailClient } from "@aws-sdk/client-lightsail"
+import * as https from "https";
 import * as http from "http";
 import path from "path";
 import { SleepingDiscord } from "./sleepingDiscord.js";
@@ -14,6 +15,7 @@ import { Socket } from "node:net";
 import pkg from "minecraft-protocol";
 import { exec } from "child_process";
 import { fileURLToPath } from 'url';
+import fs from "fs";
 const __dirname = fileURLToPath(import.meta.url);
 
 const {ping} = pkg;
@@ -23,7 +25,12 @@ export class SleepingWeb implements ISleepingServer {
   playerConnectionCallBack: PlayerConnectionCallBackType;
   logger: LoggerType;
   app: Express;
+  sslOptions = {
+	  cert: "",
+	  key: ""
+  };
   server?: http.Server;
+  httpsserver?: https.Server;
   webPath = "";
   waking = false;
   stopped = true;
@@ -49,7 +56,9 @@ export class SleepingWeb implements ISleepingServer {
 
     this.logger = getLogger();
     this.app = express();
-    this.pingEvent(true)
+    this.pingEvent(true);
+    this.sslOptions.cert =  fs.readFileSync('/etc/letsencrypt/live/wake.seni.kr/fullchain.pem', 'utf8');
+    this.sslOptions.key = fs.readFileSync('/etc/letsencrypt/live/wake.seni.kr/privkey.pem', 'utf8');
   }
   
   pingEvent = async (ignore_condition = false) => {
@@ -141,6 +150,17 @@ export class SleepingWeb implements ISleepingServer {
     );
 
     // this.configureDynmap();
+    
+    this.app.get("*", (req, res, next) => {
+      if(req.secure) {
+	next();
+      }
+      else {
+	let to = "https://" + req.headers.host + req.url;
+        this.logger.info("to ==> " + to);        
+        return res.redirect("https://" + req.headers.host + req.url);
+      }}
+    )
 
     this.app.get(`${this.webPath}/`, (req, res) => {
       res.render(path.join(__dirname, "../views/home"), {
@@ -265,8 +285,11 @@ export class SleepingWeb implements ISleepingServer {
 
       }
     });
-
-    this.server = this.app.listen(this.settings.webPort, () => {
+    
+    const httpsServer = https.createServer(this.sslOptions, this.app);
+    const httpServer = http.createServer(this.app);
+    this.server = httpServer.listen(80, () => {});
+    this.httpsserver = httpsServer.listen(this.settings.webPort, () => {
       this.logger.info(
         `[WebServer] Starting web server on *: ${this.settings.webPort}`
       );
@@ -310,7 +333,7 @@ export class SleepingWeb implements ISleepingServer {
     if (instance == undefined) {
       return "craft.seni.kr"
     }
-    return instance.PrivateIpAddress ?? "craft.seni.kr"
+    return instance.PublicIpAddress ?? "craft.seni.kr"
   }
 
   getOnlineUserCnt = async () => {
@@ -428,7 +451,8 @@ export class SleepingWeb implements ISleepingServer {
   }
 
   close = async () => {
-    if (this.server) {
+    if (this.httpsserver && this.server) {
+      this.httpsserver.close();
       this.server.close();
     }
   };

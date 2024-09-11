@@ -7,7 +7,7 @@
   "bin": "build/sleepingServerStarter.js",
   "scripts": {
     "start": "run-s prebuild build:typescript run",
-    "start:aws": "yarn run prebuild && yarn run build:typescript && yarn run run:aws",
+    "start:aws": "npm run prebuild && npm run build:typescript && npm run run:aws",
     "run:aws": "nohup nodemon -V ./build/sleepingServerStarter.js ./ &",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",

