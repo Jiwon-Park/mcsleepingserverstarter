@@ -1,7 +1,7 @@
 import fs, { readFileSync } from "fs";
 import path from "path";
 import { createConnection } from "net";
-import { autoToHTML, cleanTags } from "@sfirew/minecraft-motd-parser";
+import { autoToHTML, cleanCodes } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
 import { LATEST_MINECRAFT_VERSION } from "./version.js";
 import { getLogger } from "./sleepingLogger.js";
@@ -64,7 +64,7 @@ export const getMOTD = (
       : settings.serverMOTD;
 
   if (outputType === "plain") {
-    return cleanTags(motd);
+    return cleanCodes(motd);
   }
 
   if (outputType === "html") {

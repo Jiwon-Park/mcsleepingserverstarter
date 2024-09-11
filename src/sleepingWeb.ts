@@ -151,7 +151,7 @@ export class SleepingWeb implements ISleepingServer {
 
     // this.configureDynmap();
     
-    this.app.get("*", (req, res, next) => {
+    this.app.get("(.*)", (req, res, next) => {
       if(req.secure) {
 	next();
       }
