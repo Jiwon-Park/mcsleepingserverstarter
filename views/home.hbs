@@ -1,35 +1,59 @@
 <script>
-    const REFRESH_INTERVAL = 2000;
+    const REFRESH_INTERVAL = 10000;
     let dynmapLink = './dynmap';
 
     startClick = () => {
         console.log('WakeUp');
         $.post('./wakeup', {})
-            .done((sucess) => { console.log('WakeUp Sucess', sucess); })
+            .done((sucess) => { 
+                console.log('WakeUp Sucess', sucess); 
+                if($('#server-status').text() === '🛑 서버 꺼짐 🛑' || $('#server-status').text() === '💤 Sleeping 💤'){
+                    $('#server-status').text(`🟧 시작 중 🟧`); 
+                    $('#wakeup-button').text('...5~7분 소요됩니다...'); 
+                } else if ($('#server-status').text().includes('Running')) {
+                    $('#server-status').text(`🟧 종료 중 🟧`); 
+                    $('#wakeup-button').text('...1~2분 소요됩니다...'); 
+                }
+            })
             .fail((error) => { console.log('WakeUp Error', error); })
     };
 
     restartClick = () => {
         console.log('Restart');
         $.post('./restart', {})
-            .done((sucess) => { console.log('Restart Sucess', sucess); })
+            .done((sucess) => { 
+                console.log('Restart Sucess', sucess); 
+                $('#server-status').text(`🟧 재시작 중 🟧`);
+                $('#restart-button').text('...8~10분 소요됩니다...');
+            })
             .fail((error) => { console.log('Restart Error', error); })
+    };
+
+    shutdownClick = () => {
+        console.log('Shutdown');
+        $.post('./shutdown', {})
+            .done((sucess) => { 
+                console.log('Shutdown Sucess', sucess); 
+                $('#server-status').text(`🟧 종료 중 🟧`);
+                $('#shutdown-button').text('...1~2분 소요됩니다...');
+            })
+            .fail((error) => { console.log('Shutdown Error', error); })
     };
 
     getTexts = (status) => {
         let emoji = '🟥'
-        let buttonText = 'Wake Up';
+        let buttonText = '서버 켜기';
         switch (status) {
             case 'Running':
                 emoji = '🟩'
-                buttonText = 'Sleep'
+                buttonText = '서버 끄기'
                 break;
             case 'Sleeping':
                 emoji = '💤'
                 break;
             case 'Starting':
                 emoji = '🟧'
-                buttonText = '...Waiting...'
+                buttonText = '...5~7분 소요됩니다...'
                 break;
         }
         return { emoji, buttonText };
@@ -49,8 +73,10 @@
                     $('#wakeup-button').text(buttonText);
                     $('#wakeup-button').css('display', displayWakeBtn);
 
-                    const displayRestart = (settings.webAllowRestart && status === "Running") ? 'unset' : 'none';
-                    $('#restart-button').css('display', displayRestart);
+                    //const displayRestart = (settings.webAllowRestart && status === "Running") ? 'unset' : 'none';
+                    //$('#restart-button').css('display', displayRestart);
+                    const displayShutdown = (status === "Starting") ? 'unset' : 'none';
+                    $('#shutdown-button').css('display', displayShutdown);
 
                     const displayDynmap = dynmap ? 'unset' : 'none';
                     $('#dynmap-button').css('display', displayDynmap);
@@ -58,7 +84,7 @@
                 })
             .fail(
                 (error) => {
-                    $('#server-status').text('🛑 Offline 🛑');
+                    $('#server-status').text('🛑 서버 꺼짐 🛑');
                 })
     };
 
@@ -89,15 +115,18 @@
     <div class="homeCenter">
         <div>
             <div>{{{ motd }}}</div>
-            <div id="server-status" style="text-align: center;">🛑 Offline 🛑</div>
+            <div id="server-status" style="text-align: center;">🛑 서버 꺼짐 🛑</div>
         </div>
     </div>
     <div class="buttonContainer">
         <button id="wakeup-button" class="button secondary actionButton" onclick=" startClick() ">
             Wake Up
         </button>
-        <button id="restart-button" class="button secondary actionButton" style="display: none;" onclick=" restartClick() ">
+        {{!-- <button id="restart-button" class="button secondary actionButton" style="display: none;" onclick=" restartClick() ">
             Restart
+        </button> --}}
+        <button id="shutdown-button" class="button secondary actionButton" style="display: none;" onclick=" shutdownClick() ">
+            Shutdown
         </button>
         <button id="dynmap-button" class="button secondary actionButton" target="_blank" style="display: none;">
             Dynmap

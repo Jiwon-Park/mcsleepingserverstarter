@@ -1,5 +1,6 @@
-import { getLogger, LoggerType } from "./sleepingLogger";
-import { Settings } from "./sleepingSettings";
+import { getLogger, LoggerType } from "./sleepingLogger.js";
+import { Settings } from "./sleepingSettings.js";
+import { Player } from "./sleepingTypes.js";
 
 type DiscordContent = {
   content: null;
@@ -7,8 +8,6 @@ type DiscordContent = {
     title: string;
     color: number;
   }[];
-  username: string;
-  avatar_url: string;
 };
 
 export class SleepingDiscord {
@@ -41,18 +40,15 @@ export class SleepingDiscord {
     }
   };
 
-  onPlayerLogging = async (playerName: string) => {
+  onServerStart = async () => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `⏰ ${playerName} woke up the server !`,
+          title: `서버가 켜졌습니다!`,
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, true);
   };
@@ -62,45 +58,36 @@ export class SleepingDiscord {
       content: null,
       embeds: [
         {
-          title: "💤 Server has shut down.",
-          color: 25344,
+          title: "서버가 꺼졌습니다.",
+          color: 12260372,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   };
 
-  onPlayerJoin = async (playerName: string) => {
+  onPlayerJoin = async (player: Player) => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `👋 ${playerName} joined the server.`,
+          title: `👋 ${player} joined the server.`,
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   }
   
-  onPlayerLeft = async (playerName: string) => {
+  onPlayerLeft = async (player: Player) => {
     const content = {
       content: null,
       embeds: [
         {
-          title: `👋 ${playerName} left the server.`,
+          title: `👋 ${player} left the server.`,
           color: 25344,
         },
       ],
-      username: "SleepingServerStarter",
-      avatar_url:
-        "https://raw.githubusercontent.com/vincss/mcsleepingserverstarter/feature/discord_notification/docs/sleepingLogo.png",
     };
     await this.sendMessage(content, false);
   }

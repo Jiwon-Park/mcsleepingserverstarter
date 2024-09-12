@@ -1,12 +1,12 @@
 import fs, { readFileSync } from "fs";
 import path from "path";
 import { createConnection } from "net";
-import { autoToHtml, cleanTags } from "@sfirew/minecraft-motd-parser";
+import { autoToHTML, cleanCodes } from "@sfirew/minecraft-motd-parser";
 import ChatMessage from "prismarine-chat";
-import { LATEST_MINECRAFT_VERSION } from "./version";
-import { getLogger } from "./sleepingLogger";
-import { AccessFileSettings, Settings } from "./sleepingSettings";
-import { AccessStatus, Player } from "./sleepingTypes";
+import { LATEST_MINECRAFT_VERSION } from "./version.js";
+import { getLogger } from "./sleepingLogger.js";
+import { AccessFileSettings, Settings } from "./sleepingSettings.js";
+import { AccessStatus, Player } from "./sleepingTypes.js";
 import { load } from "js-yaml";
 
 export const isInDev = () => {
@@ -64,15 +64,15 @@ export const getMOTD = (
       : settings.serverMOTD;
 
   if (outputType === "plain") {
-    return cleanTags(motd);
+    return cleanCodes(motd);
   }
 
   if (outputType === "html") {
     // This automatically escapes any tags in the serverName to prevent XSS
-    return autoToHtml(motd);
+    return autoToHTML(motd);
   }
-
-  return ChatMessage(settings.version || LATEST_MINECRAFT_VERSION)
+  //@ts-expect-error There are Call signature in js
+  return ChatMessage(settings.version || LATEST_MINECRAFT_VERSION)  
     .MessageBuilder.fromString(motd, { colorSeparator: "§" })
     .toJSON();
 };

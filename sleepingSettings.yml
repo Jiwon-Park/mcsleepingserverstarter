@@ -1,6 +1,6 @@
 # settings for SleepingServerStarter
 
-serverName: "SleepingServer, waiting for his prince..."
+serverName: "버튼은 한번만 누르세요"
 # serverMOTD: "SleepingServer, waiting for his prince... [MOTD]" # The server name to display in Minecraft, defaults to serverName if not set
 
 serverPort: 25565
@@ -10,22 +10,23 @@ serverOnlineMode: true # like in the server.properties, to check the licence of 
 maxPlayers: 20
 # useNativeFiles: true
 
-# webPort: 8080 # a positive number a web page it will serve
+webPort: 443 # a positive number a web page it will serve
 # webStopOnStart: true
 # webServeDynmap: true # true or false to enable, by default it will serve ./plugins/dynmap/web/. You can specify an absolute path to serve instead or an url to redirect to.
-# webAllowRestart: true
+webAllowRestart: true
 
 startMinecraft: true # false to disable
-minecraftCommand: "java -jar paper.jar nogui" # or paper.jar or whatever flavor you like
+minecraftCommand: "/opt/web/CloudMCServerManager/start.sh" # or paper.jar or whatever flavor you like
+stopCommand: "/opt/web/CloudMCServerManager/stop.sh"
 # minecraftAutostart: true
 # restartDelay: 200
 
 # preventStop: true # Prevent the user to stop the server (trought web-server or cli).
 
-# discordWebhookUrl: "https://discord.com/api/webhooks/REPLACE_ME"
+discordWebhookUrl: "https://discord.com/api/webhooks/1124017685651542096/ehkqSKAq4CTWyH0VoUdijFOzZiTharlB-92T-Bpwg-Msm822dC0cI__O-JL30ja3oUNb"
 
 # blackListedAddress: ["149.102.143.151", "132.145.71.44", "45.128.232.206", "193.35.18."]
-# whiteListedNames: ["vincss"]
+# whiteListedNames: ["Seni28"]
 # useWhitelistFile: true
 # useBlacklistFiles: true
 
@@ -39,3 +40,4 @@ minecraftCommand: "java -jar paper.jar nogui" # or paper.jar or whatever flavor 
 
 # /!\ Edit this setting only if you know what you are doing
 # minecraftWorkingDirectory: "" # Set a custom working directory (path to minecraft server folder)
+webKey: "seniorious28" # A secret key to secure the web server
