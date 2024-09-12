@@ -151,8 +151,12 @@ export class SleepingWeb implements ISleepingServer {
 
     // this.configureDynmap();
     
-    this.app.get("(.*)", (req, res, next) => {
-      if(req.secure) {
+    this.app.get(/(.*)/, (req, res, next) => {
+      if(req.hostname != "wake.seni.kr") {
+	      res.status(400);
+	      return res.send("Bad request");
+      }
+      else if(req.secure) {
 	next();
       }
       else {

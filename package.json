@@ -8,7 +8,7 @@
   "scripts": {
     "start": "run-s prebuild build:typescript run",
     "start:aws": "npm run prebuild && npm run build:typescript && npm run run:aws",
-    "run:aws": "nohup nodemon -V ./build/sleepingServerStarter.js ./ &",
+    "run:aws": "pm2 start ./build/sleepingServerStarter.js",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
     "prebuild": "rimraf ./build/ ./bin/ && cpx-fixed \"views/**/*.*\" build/views",
