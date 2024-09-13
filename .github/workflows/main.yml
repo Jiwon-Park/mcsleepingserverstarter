@@ -27,6 +27,7 @@ jobs:
           REMOTE_PORT: ${{ secrets.PORT }}
           SOURCE: "build docs views node_modules package-lock.json sleepingSettings.yml package.json"
           TARGET: ${{ secrets.DEST }}
+          ARGS: "-rlgoDzvc -i --delete"
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
             sudo ../deploy.sh
