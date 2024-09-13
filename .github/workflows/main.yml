@@ -25,7 +25,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: ${{ secrets.PORT }}
-          SOURCE: "build/, docs/, views/, node_modules/, package-lock.json, sleepingSettings.yml, package.json"
+          SOURCE: "build/ docs/ views/ node_modules/ package-lock.json sleepingSettings.yml package.json"
           TARGET: ${{ secrets.DEST }}
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
