@@ -19,3 +19,4 @@ jobs:
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
             sudo deploy.sh
+            echo $RSYNC_STDOUT
