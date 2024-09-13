@@ -1,6 +1,6 @@
 {
   "name": "mcsleepingserverstarter",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "type": "module",
   "description": "Sleeps until someone connects",
   "main": "build/sleepingServerStarter.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "run-s prebuild build:typescript run",
     "start:aws": "npm run prebuild && npm run build:typescript && npm run run:aws",
-    "run:aws": "pm2 start ./build/sleepingServerStarter.js",
+    "run:aws": "pm2 start ./build/sleepingServerStarter.js --name mc_switch",
     "run": "node .",
     "dev": "cross-env disableFileLogs=true node --inspect=7000 -r ts-node/register ./src/sleepingServerStarter.ts ",
     "prebuild": "rimraf ./build/ ./bin/ && cpx-fixed \"views/**/*.*\" build/views",
