@@ -1,0 +1,21 @@
+name: Deploy to OCI
+on:
+  push:
+    branches: master
+
+jobs:
+  Deploy-to-OCI:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: SSH Remote Commands
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSHPRIV }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: ${{ secrets.PORT }}
+          TARGET: ${{ secrets.DEST }}
+          SCRIPT_AFTER: |
+            cd ${{ secrets.DEST }}
+            deploy.sh
