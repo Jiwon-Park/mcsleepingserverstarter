@@ -15,7 +15,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: ${{ secrets.PORT }}
-          TARGET: ${{ secrets.DEST }}
+          # TARGET: ${{ secrets.DEST }}
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
             sudo deploy.sh
