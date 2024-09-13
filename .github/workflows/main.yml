@@ -16,6 +16,8 @@ jobs:
       - run: npm run prebuild
       - run: npm run build:typescript
       - run: npm prune --production
+      - run: pwd
+      - run: ls
       - name: SSH Remote Commands
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
@@ -23,7 +25,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: ${{ secrets.PORT }}
-          SOURCE: "build/, docs/, views/, node_modules/, package-lock.json, sleepingSettings.yml, package.json"
+          SOURCE: "../build/, ../docs/, ../views/, ../node_modules/, ../package-lock.json, ../sleepingSettings.yml, ../package.json"
           TARGET: ${{ secrets.DEST }}
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
