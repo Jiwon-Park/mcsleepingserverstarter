@@ -18,4 +18,4 @@ jobs:
           TARGET: ${{ secrets.DEST }}
           SCRIPT_AFTER: |
             cd ${{ secrets.DEST }}
-            deploy.sh
+            sudo deploy.sh
