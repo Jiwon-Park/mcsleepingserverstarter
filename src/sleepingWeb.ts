@@ -1,7 +1,11 @@
 import express, { Express } from "express";
 import { engine } from "express-handlebars";
 import { DescribeInstancesCommand, EC2Client } from "@aws-sdk/client-ec2";
-import { UpdateDomainEntryCommand, GetDomainCommand, LightsailClient } from "@aws-sdk/client-lightsail"
+import {
+  UpdateDomainEntryCommand,
+  GetDomainCommand,
+  LightsailClient,
+} from "@aws-sdk/client-lightsail";
 import * as https from "https";
 import * as http from "http";
 import path from "path";
@@ -14,11 +18,11 @@ import { Player, PlayerConnectionCallBackType } from "./sleepingTypes.js";
 import { Socket } from "node:net";
 import pkg from "minecraft-protocol";
 import { exec } from "child_process";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 import fs from "fs";
 const __dirname = fileURLToPath(import.meta.url);
 
-const {ping} = pkg;
+const { ping } = pkg;
 
 export class SleepingWeb implements ISleepingServer {
   settings: Settings;
@@ -26,27 +30,25 @@ export class SleepingWeb implements ISleepingServer {
   logger: LoggerType;
   app: Express;
   sslOptions = {
-	  cert: "",
-	  key: ""
+    cert: "",
+    key: "",
   };
   server?: http.Server;
   httpsserver?: https.Server;
   webPath = "";
   waking = false;
   stopped = true;
-  noOneKillEvent?: NodeJS.Timeout = undefined
-  client = new EC2Client({region: 'ap-northeast-2'})
-  LSclient = new LightsailClient({region: 'us-east-1'})
-  status = -1
+  noOneKillEvent?: NodeJS.Timeout = undefined;
+  client = new EC2Client({ region: "ap-northeast-2" });
+  LSclient = new LightsailClient({ region: "us-east-1" });
+  status = -1;
   discord: SleepingDiscord;
-  minecraftHost = ''
+  minecraftHost = "";
 
   PING_INTERVAL = 60000 as const; // 60 seconds
   STOPPING_TIMEOUT_MIN = 10 as const; // 10 minutes
 
-  constructor(
-    settings: Settings
-  ) {
+  constructor(settings: Settings) {
     this.settings = settings;
     this.discord = new SleepingDiscord(settings);
     if (this.settings.webSubPath) {
@@ -57,57 +59,65 @@ export class SleepingWeb implements ISleepingServer {
     this.logger = getLogger();
     this.app = express();
     this.pingEvent(true);
-    this.sslOptions.cert =  fs.readFileSync('/etc/letsencrypt/live/wake.seni.kr/fullchain.pem', 'utf8');
-    this.sslOptions.key = fs.readFileSync('/etc/letsencrypt/live/wake.seni.kr/privkey.pem', 'utf8');
+    this.sslOptions.cert = fs.readFileSync(
+      "/etc/letsencrypt/live/wake.seni.kr/fullchain.pem",
+      "utf8"
+    );
+    this.sslOptions.key = fs.readFileSync(
+      "/etc/letsencrypt/live/wake.seni.kr/privkey.pem",
+      "utf8"
+    );
   }
-  
+
   pingEvent = async (ignore_condition = false) => {
     if (ignore_condition || this.waking || this.status > -1) {
       this.getOnlineUserCnt().then((status) => {
-        if(status == undefined){
-                status = 0
-              }
-              if (this.status >= 0 && status == -1) {
-                this.logger.info(`[WebServer] Server is not responding.`)
-                if(this.stopped == false) {
-                   this.discord.onServerStop()
-                   this.stopped = true
-                }
-                this.status = status
-                return
-              }
-        this.logger.info("status and waking")
-        this.logger.info(this.status)
-        this.logger.info(this.waking)
-        this.status = status
-        if ( this.waking && this.status >= 0 ) {
-          this.discord.onServerStart()
-          this.stopped = false
-          this.waking = false
-          this.logger.info('waking is now false')
+        if (status == undefined) {
+          status = 0;
         }
-        if ( this.noOneKillEvent == undefined && this.status == 0 ) {
-    
-          this.logger.info(`[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`)
+        if (this.status >= 0 && status == -1) {
+          this.logger.info(`[WebServer] Server is not responding.`);
+          if (this.stopped == false) {
+            this.discord.onServerStop();
+            this.stopped = true;
+          }
+          this.status = status;
+          return;
+        }
+        this.logger.info("status and waking");
+        this.logger.info(this.status);
+        this.logger.info(this.waking);
+        this.status = status;
+        if (this.waking && this.status >= 0) {
+          this.discord.onServerStart();
+          this.stopped = false;
+          this.waking = false;
+          this.logger.info("waking is now false");
+        }
+        if (this.noOneKillEvent == undefined && this.status == 0) {
+          this.logger.info(
+            `[WebServer] No one is on the server, starting the ${this.STOPPING_TIMEOUT_MIN} minute timer.`
+          );
           this.noOneKillEvent = setTimeout(async () => {
             if (this.status == 0 || this.status == undefined) {
-              this.logger.info(`[WebServer] No one is on the server, stopping the server.`)
+              this.logger.info(
+                `[WebServer] No one is on the server, stopping the server.`
+              );
               this.killMinecraft(false);
             }
-            this.noOneKillEvent = undefined
-          }, this.STOPPING_TIMEOUT_MIN * 60000 ); // 10 minutes
-        }
-    
-        else if (this.noOneKillEvent && this.status > 0) {
-          this.logger.info(`[WebServer] Someone joined the server, stopping the 10 minute timer.`)
+            this.noOneKillEvent = undefined;
+          }, this.STOPPING_TIMEOUT_MIN * 60000); // 10 minutes
+        } else if (this.noOneKillEvent && this.status > 0) {
+          this.logger.info(
+            `[WebServer] Someone joined the server, stopping the 10 minute timer.`
+          );
           clearTimeout(this.noOneKillEvent);
-          this.noOneKillEvent = undefined
+          this.noOneKillEvent = undefined;
         }
         setTimeout(this.pingEvent, this.PING_INTERVAL);
       });
     }
-  }
-  
+  };
 
   getIp = (socket: Socket) => {
     return this.settings.hideIpInLogs ? "" : `(${socket.remoteAddress})`;
@@ -138,7 +148,7 @@ export class SleepingWeb implements ISleepingServer {
     );
 
     this.app.set("view engine", "hbs");
-    this.app.use( express.json() );
+    this.app.use(express.json());
     this.app.use(
       `${this.webPath}/layouts`,
       express.static(path.join(__dirname, "../views/layouts"))
@@ -150,21 +160,19 @@ export class SleepingWeb implements ISleepingServer {
     );
 
     // this.configureDynmap();
-    
+
     this.app.get(/(.*)/, (req, res, next) => {
-      if(req.hostname != "wake.seni.kr") {
-	      res.status(400);
-	      return res.send("Bad request");
+      if (req.hostname != "wake.seni.kr") {
+        res.status(400);
+        return res.send("Bad request");
+      } else if (req.secure) {
+        next();
+      } else {
+        const to = "https://" + req.headers.host + req.url;
+        this.logger.info("to ==> " + to);
+        return res.redirect("https://" + req.headers.host + req.url);
       }
-      else if(req.secure) {
-	next();
-      }
-      else {
-	let to = "https://" + req.headers.host + req.url;
-        this.logger.info("to ==> " + to);        
-        return res.redirect("https://" + req.headers.host + req.url);
-      }}
-    )
+    });
 
     this.app.get(`${this.webPath}/`, (req, res) => {
       res.render(path.join(__dirname, "../views/home"), {
@@ -186,7 +194,7 @@ export class SleepingWeb implements ISleepingServer {
                 req.socket
               )} Wake up server was ${currentStatus}`
             );
-            this.waking = true
+            this.waking = true;
             this.playerConnectionCallBack(Player.web());
           }
           break;
@@ -220,14 +228,10 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/restart`, async (req, res) => {
       res.send("received");
 
-      this.logger.info(
-        `[WebServer]${this.getIp(
-          req.socket
-        )} Restart server`
-      );
+      this.logger.info(`[WebServer]${this.getIp(req.socket)} Restart server`);
 
       this.killMinecraft(true);
-    })
+    });
 
     this.app.get(`${this.webPath}/status`, async (req, res) => {
       const status = this.resolveStatus(this.status);
@@ -240,59 +244,55 @@ export class SleepingWeb implements ISleepingServer {
         },
       });
     });
-    
+
     this.app.post(`${this.webPath}/shutdown`, async (req, res) => {
       res.send("received");
-      this.logger.info(
-        `[WebServer]${this.getIp(
-          req.socket
-        )} Shutdown server`
-      );
+      this.logger.info(`[WebServer]${this.getIp(req.socket)} Shutdown server`);
       setTimeout(() => {
         this.killMinecraft(false, true);
-        this.waking = false
+        this.waking = false;
       }, 60000);
-      
     });
 
     this.app.post(`${this.webPath}/change_dns`, async (req, res) => {
-      this.logger.info(`${req.body.key}, ${req.body.ip}, ${req.body.hostname}`)
-      if(req.body.key == this.settings.webKey) {
+      this.logger.info(`${req.body.key}, ${req.body.ip}, ${req.body.hostname}`);
+      if (req.body.key == this.settings.webKey) {
         const getDomain = new GetDomainCommand({
-          domainName: "seni.kr"
-        })
-        const resp = await this.LSclient.send(getDomain)
+          domainName: "seni.kr",
+        });
+        const resp = await this.LSclient.send(getDomain);
         //find matching domainEntry from req.body.hostname
-        if(resp.domain?.domainEntries) {
-          const domainEntry = resp.domain.domainEntries.find((entry) => entry.name == req.body.hostname)
-          if(domainEntry) {
+        if (resp.domain?.domainEntries) {
+          const domainEntry = resp.domain.domainEntries.find(
+            (entry) => entry.name == req.body.hostname
+          );
+          if (domainEntry) {
             const updateDomain = new UpdateDomainEntryCommand({
               domainName: "seni.kr",
               domainEntry: {
                 id: domainEntry.id,
                 name: domainEntry.name,
                 target: req.body.ip,
-                type: domainEntry.type
-              }
-            })
-            const result = await this.LSclient.send(updateDomain)
-            this.logger.info(result)
-            res.send("received")
+                type: domainEntry.type,
+              },
+            });
+            const result = await this.LSclient.send(updateDomain);
+            this.logger.info(result);
+            res.send("received");
+          } else {
+            res.send("No matching domain entry");
           }
-          else {
-            res.send("No matching domain entry")
-          }
+        } else {
+          res.send("No domain entry");
         }
-        else {
-          res.send("No domain entry")
-        }
-
       }
     });
-    
+
     const httpsServer = https.createServer(this.sslOptions, this.app);
     const httpServer = http.createServer(this.app);
-    this.server = httpServer.listen(80, () => {});
+    this.server = httpServer.listen(80, () => {
+      console.log("HTTP server is listening on port 80");
+    });
     this.httpsserver = httpsServer.listen(this.settings.webPort, () => {
       this.logger.info(
         `[WebServer] Starting web server on *: ${this.settings.webPort}`
@@ -325,106 +325,118 @@ export class SleepingWeb implements ISleepingServer {
       Filters: [
         {
           Name: "tag:aws:autoscaling:groupName",
-          Values: ["minecraft"]
-        }
-      ]
-    })
-    const {Reservations} = await this.client.send(command);
+          Values: ["minecraft"],
+        },
+      ],
+    });
+    const { Reservations } = await this.client.send(command);
     if (Reservations == undefined || Reservations.length == 0) {
-      return "craft.seni.kr"
+      return "craft.seni.kr";
     }
-    const instance = Reservations.flatMap(({Instances}) => Instances)[0];
+    const instance = Reservations.flatMap(({ Instances }) => Instances)[0];
     if (instance == undefined) {
-      return "craft.seni.kr"
+      return "craft.seni.kr";
     }
-    return instance.PublicIpAddress ?? "craft.seni.kr"
-  }
+    return instance.PublicIpAddress ?? "craft.seni.kr";
+  };
 
   getOnlineUserCnt = async () => {
     this.logger.info(`[WebServer] Getting server status`);
-    let hostname = ""
-    try{
-      hostname = await this.getHostName()
-    } catch(e) {
-      hostname = "craft.seni.kr"
+    let hostname = "";
+    try {
+      hostname = await this.getHostName();
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (e) {
+      hostname = "craft.seni.kr";
     }
-    if(hostname == "craft.seni.kr") {
-      this.logger.error(`[WebServer] Error getting hostname`)
+    if (hostname == "craft.seni.kr") {
+      this.logger.error(`[WebServer] Error getting hostname`);
     }
-    
-    let pingres = -1
-    try{
+
+    let pingres = -1;
+    try {
       await ping(
-        {host: hostname, port:25565, version: "1.19.4"},
-        (err, res) : void => {
+        { host: hostname, port: 25565, version: "1.19.4" },
+        (err, res): void => {
           if (err) {
-            this.logger.error(`[WebServer] Error getting server status: ${err}`)
-            pingres = -1
-          }
-          else if(res) {
-            if('players' in res) {
-              pingres = res.players.online
+            this.logger.error(
+              `[WebServer] Error getting server status: ${err}`
+            );
+            pingres = -1;
+          } else if (res) {
+            if ("players" in res) {
+              pingres = res.players.online;
+            } else {
+              pingres = res.playerCount;
             }
-            else {
-              pingres = res.playerCount
-            }
-            this.logger.info(`[WebServer] Server is responding with ${pingres} players`)
-          }
-          else {
-            pingres = -1
-            this.logger.info(`[WebServer] Server is not responding`)
+            this.logger.info(
+              `[WebServer] Server is responding with ${pingres} players`
+            );
+          } else {
+            pingres = -1;
+            this.logger.info(`[WebServer] Server is not responding`);
           }
         }
-      )
-    } catch(e) {
-      this.logger.error(e)
-      pingres = -1
+      );
+    } catch (e) {
+      this.logger.error(e);
+      pingres = -1;
     }
-    return pingres
-  }
+    return pingres;
+  };
 
   resolveStatus = (status: number) => {
     let resolvedStatus = "";
 
     if (status == -1) {
-      if (this.waking) resolvedStatus = ServerStatus.Starting
-      else resolvedStatus = ServerStatus.Sleeping
+      if (this.waking) resolvedStatus = ServerStatus.Starting;
+      else resolvedStatus = ServerStatus.Sleeping;
+    } else {
+      resolvedStatus = ServerStatus.Running;
     }
-    else {
-      resolvedStatus = ServerStatus.Running
-    }
-    return resolvedStatus
-  }
+    return resolvedStatus;
+  };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   startMinecraft = async (player: Player) => {
     this.logger.info(`[WebServer] Starting Minecraft Server`);
     if (this.settings.minecraftCommand) {
-      const proc = exec(this.settings.minecraftCommand, (error, stdout, stderr) => {
-        if (error) {
-          this.logger.error(`[WebServer] Error starting server: ${error}`);
-          return;
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const proc = exec(
+        this.settings.minecraftCommand,
+        (error, stdout, stderr) => {
+          if (error) {
+            this.logger.error(`[WebServer] Error starting server: ${error}`);
+            return;
+          }
+          if (stderr) {
+            this.logger.warn(
+              `[WebServer] Error/Warn starting server: ${stderr}`
+            );
+          }
+          this.logger.info(
+            `[WebServer] Started server: ${stdout}\n------------------`
+          );
+          this.pingEvent();
         }
-        if (stderr) {
-          this.logger.warn(`[WebServer] Error/Warn starting server: ${stderr}`);
-        }
-        this.logger.info(`[WebServer] Started server: ${stdout}\n------------------`);
-        this.pingEvent()
-      });
-      
-    }
-    else {
+      );
+    } else {
       this.logger.error(
         `[WebServer] No start command defined, cannot start the server`
       );
     }
-  }
+  };
 
-  killMinecraft = async (restart: boolean, withoutBackup=false) => {
+  killMinecraft = async (restart: boolean, withoutBackup = false) => {
     this.logger.info(
       `[WebServer] Killing Minecraft Server, restart: ${restart}`
     );
     if (this.settings.stopCommand) {
-      const stopCommand = this.settings.stopCommand + (withoutBackup ? " --extra-vars \"backup=0\"" : " --extra-vars \"backup=1\"")
+      const stopCommand =
+        this.settings.stopCommand +
+        (withoutBackup
+          ? ' --extra-vars "backup=0"'
+          : ' --extra-vars "backup=1"');
       const proc = exec(stopCommand, (error, stdout, stderr) => {
         if (error) {
           this.logger.error(`[WebServer] Error stopping server: ${error}`);
@@ -433,26 +445,28 @@ export class SleepingWeb implements ISleepingServer {
         if (stderr) {
           this.logger.error(`[WebServer] Error stopping server: ${stderr}`);
         }
-        this.logger.info(`[WebServer] Stopped server: ${stdout}\n------------------`);
+        this.logger.info(
+          `[WebServer] Stopped server: ${stdout}\n------------------`
+        );
         if (this.stopped == false) {
-          this.discord.onServerStop()
-          this.stopped = true
+          this.discord.onServerStop();
+          this.stopped = true;
         }
       });
-      
+
       if (restart) {
-        proc.on('exit', () => { setTimeout(() => {
-          this.playerConnectionCallBack(Player.web())
-        }, 10000)});
+        proc.on("exit", () => {
+          setTimeout(() => {
+            this.playerConnectionCallBack(Player.web());
+          }, 10000);
+        });
       }
-    }
-    else {
+    } else {
       this.logger.error(
         `[WebServer] No stop command defined, cannot stop the server`
       );
     }
-    
-  }
+  };
 
   close = async () => {
     if (this.httpsserver && this.server) {
