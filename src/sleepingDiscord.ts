@@ -66,6 +66,19 @@ export class SleepingDiscord {
     await this.sendMessage(content, false);
   };
 
+  onServerCrash = async () => {
+    const content = {
+      content: null,
+      embeds: [
+        {
+          title: "서버가 종료된 것 같습니다.",
+          color: 12260372,
+        },
+      ],
+    };
+    await this.sendMessage(content, false);
+  };
+
   onPlayerJoin = async (player: Player) => {
     const content = {
       content: null,
@@ -77,8 +90,8 @@ export class SleepingDiscord {
       ],
     };
     await this.sendMessage(content, false);
-  }
-  
+  };
+
   onPlayerLeft = async (player: Player) => {
     const content = {
       content: null,
@@ -90,5 +103,5 @@ export class SleepingDiscord {
       ],
     };
     await this.sendMessage(content, false);
-  }
+  };
 }
