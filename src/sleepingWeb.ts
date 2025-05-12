@@ -188,7 +188,6 @@ export class SleepingWeb implements ISleepingServer {
     this.app.post(`${this.webPath}/wakeup`, async (req, res) => {
       res.send("received");
 
-      // const currentStatus = this.resolveStatus(await this.getOnlineUserCnt());
       const currentStatus = this.resolveStatus(this.status);
 
       switch (currentStatus) {
